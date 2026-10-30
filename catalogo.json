@@ -1,0 +1,98 @@
+[
+  {
+    "id": "oceano",
+    "titulo": "Oceano de Silêncio",
+    "tipo": "Filme",
+    "ano": "2026",
+    "genero": "Drama",
+    "descricao": "Uma viagem inesperada coloca escolhas, memórias e coragem em rota de colisão. Edite esta descrição e adicione o link do seu vídeo no Google Drive.",
+    "capa": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=85",
+    "banner": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2000&q=90",
+    "driveId": "",
+    "destaque": true
+  },
+  {
+    "id": "cidade",
+    "titulo": "Cidade Depois da Chuva",
+    "tipo": "Filme",
+    "ano": "2025",
+    "genero": "Suspense",
+    "descricao": "Em uma cidade que nunca dorme, uma descoberta muda o destino de todos.",
+    "capa": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": true
+  },
+  {
+    "id": "ultima",
+    "titulo": "A Última Fronteira",
+    "tipo": "Série",
+    "ano": "2026",
+    "genero": "Aventura",
+    "descricao": "Uma equipe parte em busca de respostas além do desconhecido.",
+    "capa": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": true
+  },
+  {
+    "id": "vertigem",
+    "titulo": "Vertigem",
+    "tipo": "Filme",
+    "ano": "2024",
+    "genero": "Ação",
+    "descricao": "Uma corrida contra o tempo em que ninguém é quem parece ser.",
+    "capa": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": false
+  },
+  {
+    "id": "entrelinhas",
+    "titulo": "Entre Linhas",
+    "tipo": "Série",
+    "ano": "2025",
+    "genero": "Drama",
+    "descricao": "Segredos de família vêm à tona quando uma carta antiga é encontrada.",
+    "capa": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": false
+  },
+  {
+    "id": "orbita",
+    "titulo": "Órbita Zero",
+    "tipo": "Filme",
+    "ano": "2026",
+    "genero": "Ficção científica",
+    "descricao": "Uma missão espacial recebe um sinal que não deveria existir.",
+    "capa": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": false
+  },
+  {
+    "id": "refugio",
+    "titulo": "O Refúgio",
+    "tipo": "Série",
+    "ano": "2024",
+    "genero": "Suspense",
+    "descricao": "Um grupo busca abrigo e descobre que o perigo pode estar mais perto do que imaginava.",
+    "capa": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": false
+  },
+  {
+    "id": "verao",
+    "titulo": "Verão Infinito",
+    "tipo": "Filme",
+    "ano": "2025",
+    "genero": "Romance",
+    "descricao": "Dois desconhecidos vivem um verão que muda suas vidas para sempre.",
+    "capa": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    "banner": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
+    "driveId": "",
+    "destaque": false
+  }
+]
