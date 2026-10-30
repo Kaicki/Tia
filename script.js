@@ -87,6 +87,7 @@ function render() {
     const porAno = [...lista].sort((a, b) => b.ano - a.ano);
     const recentes = [...lista].sort((a, b) => String(b.adicionado || '').localeCompare(String(a.adicionado || '')));
     let html = linha('Lançamentos', porAno.slice(0, 12))
+      + (state.view === 'inicio' ? linha('Séries', lista.filter(i => i.tipo === 'serie')) : '')
       + linha('Populares', lista.filter(i => i.popular))
       + linha('Adicionados recentemente', recentes.slice(0, 12));
     [...new Set(lista.flatMap(i => i.generos))].sort().forEach(g => html += linha(g, lista.filter(i => i.generos.includes(g))));
