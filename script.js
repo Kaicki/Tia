@@ -13,6 +13,7 @@ function alternarFav(key) { state.favs.has(key) ? state.favs.delete(key) : state
 
 /* ---------- Google Drive ---------- */
 function driveEmbed(link) {
+  if (/^[\w-]{20,}$/.test(link)) return `https://drive.google.com/file/d/${link}/preview`;
   const m = String(link).match(/\/d\/([\w-]+)/) || String(link).match(/[?&]id=([\w-]+)/);
   return m ? `https://drive.google.com/file/d/${m[1]}/preview` : link;
 }
@@ -109,10 +110,10 @@ function desenharHero() {
   const i = state.destaques[state.heroIdx % state.destaques.length];
   if (!i) { $('#hero').innerHTML = ''; return; }
   const h = $('#hero');
-  h.style.backgroundImage = i.banner ? `url("${i.banner}")` : 'linear-gradient(135deg,#4a0000,#000)';
+  h.style.backgroundImage = (i.banner || i.capa) ? `url("${i.banner || i.capa}")` : 'linear-gradient(135deg,#4a0000,#000)';
   h.innerHTML = `<div class="hero-info" id="heroInfo">
     <h1>${esc(i.titulo)}</h1>
-    <div class="meta"><b>Em destaque</b> · ${i.ano || ''} · ${esc(i.generos.join(', '))}</div>
+    <div class="meta"><b>Em destaque</b> · ${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div>
     <p>${esc(i.descricao)}</p>
     <div class="botoes">
       <button class="btn btn-play" data-assistir="${esc(i.key)}">▶ Assistir</button>
@@ -130,7 +131,7 @@ function abrirInfo(key) {
     <div class="m-banner" style="background-image:${i.banner || i.capa ? `url('${esc(i.banner || i.capa)}')` : 'linear-gradient(135deg,#4a0000,#111)'}"></div>
     <div class="m-corpo">
       <h2>${esc(i.titulo)}</h2>
-      <div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))} · ${i.tipo === 'serie' ? 'Série' : 'Filme'}</div>
+      <div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''} · ${i.tipo === 'serie' ? 'Série' : 'Filme'}</div>
       <p>${esc(i.descricao)}</p>
       <div class="botoes">
         <button class="btn btn-play" data-assistir="${esc(key)}">▶ Assistir</button>
@@ -143,10 +144,11 @@ function fecharInfo() { $('#modal').hidden = true; if ($('#player').hidden) docu
 /* ---------- Player ---------- */
 function abrirPlayer(key) {
   const i = achar(key); if (!i) return;
+  if (!i.link) { alert('Este título ainda não tem link de vídeo no catálogo.'); return; }
   fecharInfo();
   $('#playerTitulo').textContent = i.titulo;
   $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(i.link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>`;
-  $('#playerInfo').innerHTML = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}</div><p>${esc(i.descricao)}</p>`;
+  $('#playerInfo').innerHTML = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div><p>${esc(i.descricao)}</p>`;
   $('#player').hidden = false; document.body.classList.add('travado');
 }
 function fecharPlayer() {
