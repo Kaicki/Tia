@@ -111,6 +111,7 @@ function desenharHero() {
   if (!i) { $('#hero').innerHTML = ''; return; }
   const h = $('#hero');
   h.style.backgroundImage = (i.banner || i.capa) ? `url("${i.banner || i.capa}")` : 'linear-gradient(135deg,#4a0000,#000)';
+  if (i.banner && i.capa) { const im = new Image(); im.onerror = () => { h.style.backgroundImage = `url("${i.capa}")`; }; im.src = i.banner; }
   h.innerHTML = `<div class="hero-info" id="heroInfo">
     <h1>${esc(i.titulo)}</h1>
     <div class="meta"><b>Em destaque</b> · ${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div>
@@ -142,14 +143,33 @@ function abrirInfo(key) {
 function fecharInfo() { $('#modal').hidden = true; if ($('#player').hidden) document.body.classList.remove('travado'); }
 
 /* ---------- Player ---------- */
-function abrirPlayer(key) {
+const temporadasDe = i => (i.temporadas || []).filter(t => t.episodios && t.episodios.length);
+function abrirPlayer(key, t = 0, e = 0) {
   const i = achar(key); if (!i) return;
-  if (!i.link) { alert('Este título ainda não tem link de vídeo no catálogo.'); return; }
+  const temps = temporadasDe(i);
+  if (temps.length && !temps[t]) { t = 0; e = 0; }
+  const link = temps.length ? temps[t].episodios[e]?.link : i.link;
+  if (!link) { alert('Este título ainda não tem link de vídeo no catálogo.'); return; }
   fecharInfo();
-  $('#playerTitulo').textContent = i.titulo;
-  $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(i.link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>`;
-  $('#playerInfo').innerHTML = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div><p>${esc(i.descricao)}</p>`;
-  $('#player').hidden = false; document.body.classList.add('travado');
+  state.pk = key; state.pt = t; state.pe = e;
+  $('#playerTitulo').textContent = i.titulo + (temps.length ? ` · T${temps[t].temporada} E${e + 1}` : '');
+  $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>`;
+  let html = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div><p>${esc(i.descricao)}</p>`;
+  if (temps.length) {
+    html += `<div class="eps">
+      <select id="selTemp" aria-label="Temporada">${temps.map((x, n) => `<option value="${n}" ${n === t ? 'selected' : ''}>Temporada ${x.temporada}</option>`).join('')}</select>
+      <button class="btn btn-sec" id="proxEp" type="button">Próximo episódio ▶</button>
+      <div class="eps-lista">${temps[t].episodios.map((x, n) => `<button class="ep ${n === e ? 'on' : ''}" data-ep="${n}" title="${esc(x.titulo || '')}">${n + 1}</button>`).join('')}</div>
+    </div>`;
+  }
+  $('#playerInfo').innerHTML = html;
+  $('#player').hidden = false; $('#player').scrollTo(0, 0); document.body.classList.add('travado');
+}
+function proximoEp() {
+  const temps = temporadasDe(achar(state.pk) || {});
+  let t = state.pt, e = state.pe + 1;
+  if (e >= temps[t].episodios.length) { t++; e = 0; }
+  if (t < temps.length) abrirPlayer(state.pk, t, e);
 }
 function fecharPlayer() {
   if ($('#player').hidden) return;
@@ -183,6 +203,8 @@ document.addEventListener('click', e => {
   if (favm) { alternarFav(favm.dataset.favm); abrirInfo(favm.dataset.favm); render(); return; }
   if (as) { assistir(as.dataset.assistir); return; }
   if (inf) { abrirInfo(inf.dataset.info); return; }
+  const ep = t.closest('[data-ep]'); if (ep) { abrirPlayer(state.pk, state.pt, +ep.dataset.ep); return; }
+  if (t.id === 'proxEp') { proximoEp(); return; }
   if (c) { abrirInfo(c.dataset.key); return; }
   if (t === $('#modal')) fecharInfo();
 });
@@ -190,6 +212,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { if (!$('#player').hidden) history.back(); else fecharInfo(); }
   if ((e.key === 'Enter') && e.target.classList?.contains('card')) abrirInfo(e.target.dataset.key);
 });
+document.addEventListener('change', e => { if (e.target.id === 'selTemp') abrirPlayer(state.pk, +e.target.value, 0); });
 $('#fecharModal').onclick = fecharInfo;
 $('#voltar').onclick = () => { location.hash ? history.back() : fecharPlayer(); };
 $('#telaCheia').onclick = telaCheia;
