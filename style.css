@@ -103,3 +103,12 @@ footer{text-align:center;color:#666;padding:2rem 1rem;font-size:.85rem}
   .filtros{padding-top:8rem}
   .card:hover{transform:none}
 }
+
+/* Séries: temporadas e episódios */
+.eps{margin-top:1.4rem}
+.eps select{background:#222;border:1px solid #fff3;border-radius:4px;padding:.55rem .8rem;margin-right:.6rem}
+.eps .btn{padding:.55rem 1rem}
+.eps-lista{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.ep{min-width:46px;padding:.6rem .8rem;border-radius:4px;background:#222;border:1px solid #fff2;transition:.2s}
+.ep:hover{border-color:var(--verm2)}
+.ep.on{background:var(--verm);border-color:var(--verm2)}
