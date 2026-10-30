@@ -1,7 +1,7 @@
 /* TIAFLIX — tudo é carregado de catalogo.json e catalogoseries.json */
 const $ = s => document.querySelector(s);
 const FAV_KEY = 'tiaflix:favoritos';
-const state = { itens: [], view: 'inicio', busca: '', genero: '', ano: '', favs: new Set(), destaques: [], heroIdx: 0, heroTimer: null };
+const state = { erros: [], itens: [], view: 'inicio', busca: '', genero: '', ano: '', favs: new Set(), destaques: [], heroIdx: 0, heroTimer: null };
 
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const norm = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -22,6 +22,7 @@ function driveEmbed(link) {
 async function lerJson(arq, tipo) {
   try {
     const r = await fetch(arq, { cache: 'no-cache' });
+    if (!r.ok) throw new Error('arquivo não encontrado, HTTP ' + r.status);
     const dados = await r.json();
     const lista = Array.isArray(dados) ? dados : (dados.itens || []);
     return lista.map(i => ({
@@ -29,7 +30,7 @@ async function lerJson(arq, tipo) {
       generos: [].concat(i.genero || []).map(g => String(g).trim()).filter(Boolean),
       ano: Number(i.ano) || 0
     }));
-  } catch (e) { console.error('Erro ao carregar', arq, e); return []; }
+  } catch (e) { console.error('Erro ao carregar', arq, e); state.erros.push(`${arq} (${e.message})`); return []; }
 }
 
 async function iniciar() {
@@ -91,7 +92,8 @@ function render() {
       + linha('Populares', lista.filter(i => i.popular))
       + linha('Adicionados recentemente', recentes.slice(0, 12));
     [...new Set(lista.flatMap(i => i.generos))].sort().forEach(g => html += linha(g, lista.filter(i => i.generos.includes(g))));
-    el.innerHTML = html || '<p class="vazio">Catálogo vazio.</p>';
+    const aviso = state.erros.length ? `<p class="vazio" style="padding-top:${state.view === 'inicio' ? '5rem' : '1rem'};color:#ff6b6b">Não consegui ler: ${esc(state.erros.join('; '))}. Confira se o arquivo existe e se o JSON está válido.</p>` : '';
+    el.innerHTML = aviso + (html || `<p class="vazio">${state.view === 'series' ? 'Nenhuma série encontrada no catalogoseries.json.' : 'Catálogo vazio.'}</p>`);
     if (state.view !== 'inicio') el.style.paddingTop = '6rem'; else el.style.paddingTop = '';
     if (state.view !== 'inicio') $('#filtros').hidden = false;
   }
