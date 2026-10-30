@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "titulo": "Código Escarlate",
+    "ano": 2026,
+    "genero": [
+      "Ação",
+      "Suspense"
+    ],
+    "descricao": "Exemplo de série. Cada episódio/temporada pode ter seu próprio item ou um link de playlist.",
+    "capa": "img/capa1.jpg",
+    "banner": "img/banner1.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": true,
+    "popular": true,
+    "adicionado": "2026-10-27"
+  },
+  {
+    "id": 2,
+    "titulo": "Família em Foco",
+    "ano": 2025,
+    "genero": [
+      "Comédia",
+      "Drama"
+    ],
+    "descricao": "Exemplo de série de comédia.",
+    "capa": "img/capa2.jpg",
+    "banner": "img/banner2.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": true,
+    "adicionado": "2026-10-10"
+  },
+  {
+    "id": 3,
+    "titulo": "Mistérios da Noite",
+    "ano": 2024,
+    "genero": [
+      "Suspense"
+    ],
+    "descricao": "Exemplo de série de mistério.",
+    "capa": "img/capa3.jpg",
+    "banner": "img/banner3.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-09-01"
+  },
+  {
+    "id": 4,
+    "titulo": "Reino Distante",
+    "ano": 2023,
+    "genero": [
+      "Fantasia",
+      "Aventura"
+    ],
+    "descricao": "Exemplo de série de fantasia.",
+    "capa": "img/capa4.jpg",
+    "banner": "img/banner4.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": true,
+    "adicionado": "2026-07-12"
+  }
+]

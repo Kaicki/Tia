@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "titulo": "Noite Vermelha",
+    "ano": 2026,
+    "genero": [
+      "Ação",
+      "Suspense"
+    ],
+    "descricao": "Exemplo de filme. Troque este texto, as imagens e o link do Google Drive pelo seu conteúdo.",
+    "capa": "img/capa1.jpg",
+    "banner": "img/banner1.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": true,
+    "popular": true,
+    "adicionado": "2026-10-28"
+  },
+  {
+    "id": 2,
+    "titulo": "O Último Horizonte",
+    "ano": 2025,
+    "genero": [
+      "Ficção Científica",
+      "Drama"
+    ],
+    "descricao": "Exemplo de descrição para o segundo filme do catálogo.",
+    "capa": "img/capa2.jpg",
+    "banner": "img/banner2.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": true,
+    "adicionado": "2026-10-20"
+  },
+  {
+    "id": 3,
+    "titulo": "Risos na Cidade",
+    "ano": 2024,
+    "genero": [
+      "Comédia"
+    ],
+    "descricao": "Exemplo de comédia para demonstrar categorias por gênero.",
+    "capa": "img/capa3.jpg",
+    "banner": "img/banner3.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-09-15"
+  },
+  {
+    "id": 4,
+    "titulo": "Sombras do Passado",
+    "ano": 2023,
+    "genero": [
+      "Suspense",
+      "Drama"
+    ],
+    "descricao": "Exemplo de filme de suspense.",
+    "capa": "img/capa4.jpg",
+    "banner": "img/banner4.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": true,
+    "adicionado": "2026-08-01"
+  },
+  {
+    "id": 5,
+    "titulo": "Aventura Selvagem",
+    "ano": 2026,
+    "genero": [
+      "Ação",
+      "Aventura"
+    ],
+    "descricao": "Exemplo de aventura lançada recentemente.",
+    "capa": "img/capa5.jpg",
+    "banner": "img/banner5.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": true,
+    "popular": false,
+    "adicionado": "2026-10-25"
+  },
+  {
+    "id": 6,
+    "titulo": "Coração de Cinema",
+    "ano": 2022,
+    "genero": [
+      "Romance",
+      "Drama"
+    ],
+    "descricao": "Exemplo de romance.",
+    "capa": "img/capa6.jpg",
+    "banner": "img/banner6.jpg",
+    "link": "https://drive.google.com/file/d/COLE_O_ID_DO_VIDEO_AQUI/view",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-06-10"
+  }
+]
