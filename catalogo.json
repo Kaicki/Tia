@@ -1,5 +1,23 @@
 [
   {
+  "id": 2,
+  "titulo": "Homem-Aranha: Um Novo Dia",
+  "ano": 2026,
+  "genero": [
+    "Ação",
+    "Aventura",
+    "Ficção científica"
+  ],
+  "duracao": "",
+  "descricao": "Peter Parker enfrenta uma nova fase de sua vida como Homem-Aranha.",
+  "capa": "",
+  "banner": "",
+  "link": "https://drive.google.com/file/d/1eW0BR7_cimiBG9rmD1EYK1V8eIfeEQgb/view?usp=drivesdk",
+  "destaque": false,
+  "popular": false,
+  "adicionado": "2026-10-31"
+  },
+  {
     "id": 1,
     "titulo": "A Era do Gelo",
     "ano": 2002,
