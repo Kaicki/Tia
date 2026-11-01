@@ -12,9 +12,6 @@ const norm = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '
 /* url() seguro para CSS (aspas, barras e quebras de linha quebrariam o estilo) */
 const cssUrl = u => `url("${String(u).replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")`;
 
-/* ---------- Conta (Supabase) ----------
-   O cliente é criado no index.html e fica em window.tiaflixAuth.
-   Se o Supabase não carregar, o site continua funcionando só com o LocalStorage. */
 const sb = window.tiaflixAuth || null;
 let userId = null;
 
@@ -35,7 +32,6 @@ async function alternarFav(key) {
   } catch (e) { console.error('Erro ao salvar favorito na conta', e); }
 }
 
-/* ao entrar: junta os favoritos deste aparelho com os da conta */
 async function sincronizarFavs() {
   if (!sb || !userId) return;
   try {
@@ -65,24 +61,21 @@ if (sb) {
   });
 }
 
-/* atualiza os corações na tela sem refazer tudo (não perde a posição das linhas) */
 function atualizarCoracoes(key) {
   const on = state.favs.has(key);
   document.querySelectorAll('.coracao').forEach(b => {
     if (b.dataset.fav !== key) return;
     b.classList.toggle('on', on);
-    b.textContent = on ? '♥' : '♡';
+    b.textContent = on ? '❤️' : '🤍';
   });
 }
 
-/* ---------- Google Drive ---------- */
 function driveEmbed(link) {
   if (/^[\w-]{20,}$/.test(link)) return `https://drive.google.com/file/d/${link}/preview`;
   const m = String(link).match(/\/d\/([\w-]+)/) || String(link).match(/[?&]id=([\w-]+)/);
   return m ? `https://drive.google.com/file/d/${m[1]}/preview` : link;
 }
 
-/* ---------- Carregamento ---------- */
 async function lerJson(arq, tipo) {
   try {
     const r = await fetch(arq, { cache: 'no-cache' });
@@ -110,12 +103,9 @@ async function iniciar() {
   rota();
 }
 
-/* ---------- Busca tolerante ---------- */
-/* ignora acentos, maiúsculas, pontuação (: ; - ! etc.) e a ordem das palavras;
-   aceita pedaço de palavra e pequenos erros de digitação */
 const limpa = t => norm(t).replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 
-function distancia(a, b) { // distância de Levenshtein
+function distancia(a, b) {
   const m = a.length, n = b.length;
   if (!m) return n;
   if (!n) return m;
@@ -144,7 +134,6 @@ function casaBusca(titulo, q) {
   return q.split(' ').every(p => palavraCasa(p, palavrasT, t));
 }
 
-/* ---------- Dados derivados ---------- */
 function base() {
   const v = state.view;
   if (v === 'filmes') return state.itens.filter(i => i.tipo === 'filme');
@@ -160,7 +149,6 @@ function filtrar(lista) {
     (!state.ano || String(i.ano) === state.ano));
 }
 
-/* ---------- Render ---------- */
 function card(i) {
   const fav = state.favs.has(i.key);
   return `<div class="card" data-key="${esc(i.key)}" tabindex="0" role="button" aria-label="${esc(i.titulo)}">
@@ -211,7 +199,6 @@ function preencherFiltros(lista) {
   $('#fAno').innerHTML = '<option value="">Todos os anos</option>' + as.map(a => `<option ${String(a) === state.ano ? 'selected' : ''}>${a}</option>`).join('');
 }
 
-/* ---------- Hero ---------- */
 function desenharHero() {
   clearInterval(state.heroTimer);
   const i = state.destaques[state.heroIdx % state.destaques.length];
@@ -231,7 +218,6 @@ function desenharHero() {
   if (state.destaques.length > 1) state.heroTimer = setInterval(() => { state.heroIdx++; desenharHero(); }, 9000);
 }
 
-/* ---------- Modal de informações ---------- */
 const achar = key => state.itens.find(i => i.key === key);
 function abrirInfo(key) {
   const i = achar(key); if (!i) return;
@@ -252,7 +238,6 @@ function abrirInfo(key) {
 }
 function fecharInfo() { $('#modal').hidden = true; if ($('#player').hidden) document.body.classList.remove('travado'); }
 
-/* ---------- Player ---------- */
 const temporadasDe = i => (i.temporadas || []).filter(t => t.episodios && t.episodios.length);
 function abrirPlayer(key, t = 0, e = 0) {
   const i = achar(key); if (!i) return;
@@ -289,7 +274,7 @@ function fecharPlayer() {
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   document.body.classList.remove('travado');
 }
-/* voltar: se o usuário abriu o link direto, history.back() sairia do site */
+
 function voltar() {
   if (state.navegou) history.back();
   else { history.replaceState(null, '', location.pathname + location.search); fecharPlayer(); }
@@ -313,7 +298,6 @@ function rota() {
 }
 function assistir(key) { state.navegou = true; location.hash = 'assistir-' + encodeURIComponent(key); }
 
-/* ---------- Eventos ---------- */
 document.addEventListener('click', e => {
   const t = e.target;
   const fav = t.closest('[data-fav]'), favm = t.closest('[data-favm]'), as = t.closest('[data-assistir]'), inf = t.closest('[data-info]'), c = t.closest('.card');
