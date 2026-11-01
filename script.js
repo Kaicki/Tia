@@ -1,15 +1,30 @@
 /* TIAFLIX — tudo é carregado de catalogo.json e catalogoseries.json */
 const $ = s => document.querySelector(s);
 const FAV_KEY = 'tiaflix:favoritos';
-const state = { erros: [], itens: [], view: 'inicio', busca: '', genero: '', ano: '', favs: new Set(), destaques: [], heroIdx: 0, heroTimer: null };
+const state = {
+  erros: [], itens: [], view: 'inicio', busca: '', genero: '', ano: '',
+  favs: new Set(), destaques: [], heroIdx: 0, heroTimer: null,
+  navegou: false, pk: null, pt: 0, pe: 0
+};
 
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const norm = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+/* url() seguro para CSS (aspas, barras e quebras de linha quebrariam o estilo) */
+const cssUrl = u => `url("${String(u).replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")`;
 
 /* ---------- Favoritos (LocalStorage) ---------- */
 function lerFavs() { try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY)) || []); } catch { return new Set(); } }
 function salvarFavs() { try { localStorage.setItem(FAV_KEY, JSON.stringify([...state.favs])); } catch {} }
 function alternarFav(key) { state.favs.has(key) ? state.favs.delete(key) : state.favs.add(key); salvarFavs(); }
+/* atualiza os corações na tela sem refazer tudo (não perde a posição das linhas) */
+function atualizarCoracoes(key) {
+  const on = state.favs.has(key);
+  document.querySelectorAll('.coracao').forEach(b => {
+    if (b.dataset.fav !== key) return;
+    b.classList.toggle('on', on);
+    b.textContent = on ? '♥' : '♡';
+  });
+}
 
 /* ---------- Google Drive ---------- */
 function driveEmbed(link) {
@@ -25,8 +40,11 @@ async function lerJson(arq, tipo) {
     if (!r.ok) throw new Error('arquivo não encontrado, HTTP ' + r.status);
     const dados = await r.json();
     const lista = Array.isArray(dados) ? dados : (dados.itens || []);
-    return lista.map(i => ({
-      ...i, tipo, key: `${tipo}-${i.id}`,
+    return lista.map((i, n) => ({
+      ...i, tipo, key: `${tipo}-${i.id ?? n}`,
+      link: i.link || i.driveId || '',
+      capa: i.capa || i.poster || '',
+      banner: i.banner || i.backdrop || '',
       generos: [].concat(i.genero || []).map(g => String(g).trim()).filter(Boolean),
       ano: Number(i.ano) || 0
     }));
@@ -43,6 +61,40 @@ async function iniciar() {
   rota();
 }
 
+/* ---------- Busca tolerante ---------- */
+/* ignora acentos, maiúsculas, pontuação (: ; - ! etc.) e a ordem das palavras;
+   aceita pedaço de palavra e pequenos erros de digitação */
+const limpa = t => norm(t).replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+
+function distancia(a, b) { // distância de Levenshtein
+  const m = a.length, n = b.length;
+  if (!m) return n;
+  if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++)
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+
+function palavraCasa(p, palavrasTitulo, titulo) {
+  if (titulo.includes(p)) return true;          // pedaço de palavra
+  if (p.length < 4) return false;
+  const tol = p.length >= 8 ? 2 : 1;            // erros permitidos
+  return palavrasTitulo.some(w =>
+    distancia(p, w) <= tol || distancia(p, w.slice(0, p.length)) <= tol);
+}
+
+function casaBusca(titulo, q) {
+  if (!q) return true;
+  const t = limpa(titulo);
+  const palavrasT = t.split(' ');
+  return q.split(' ').every(p => palavraCasa(p, palavrasT, t));
+}
+
 /* ---------- Dados derivados ---------- */
 function base() {
   const v = state.view;
@@ -52,9 +104,9 @@ function base() {
   return state.itens;
 }
 function filtrar(lista) {
-  const q = norm(state.busca);
+  const q = limpa(state.busca);
   return lista.filter(i =>
-    (!q || norm(i.titulo).includes(q)) &&
+    casaBusca(i.titulo, q) &&
     (!state.genero || i.generos.includes(state.genero)) &&
     (!state.ano || String(i.ano) === state.ano));
 }
@@ -73,16 +125,19 @@ const linha = (t, l) => l.length ? `<section class="linha"><h2>${esc(t)}</h2><di
 
 function render() {
   const lista = base();
-  const grade = state.busca || state.genero || state.ano || state.view === 'lista';
-  $('#hero').hidden = !(state.view === 'inicio' && !grade);
-  $('#filtros').hidden = state.view === 'inicio' && !grade;
+  const grade = !!(state.busca || state.genero || state.ano || state.view === 'lista');
+  const mostrarHero = state.view === 'inicio' && !grade;
+  $('#hero').hidden = !mostrarHero;
+  $('#filtros').hidden = mostrarHero;
   preencherFiltros(lista);
   document.querySelectorAll('#menu button').forEach(b => b.classList.toggle('ativo', b.dataset.view === state.view));
 
   const el = $('#conteudo');
+  el.style.paddingTop = state.view === 'inicio' ? '' : '6rem';
+
   if (grade) {
     const r = filtrar(lista);
-    el.innerHTML = r.length ? `<div class="grade" style="padding-top:${$('#filtros').hidden ? '6rem' : '1rem'}">${r.map(card).join('')}</div>`
+    el.innerHTML = r.length ? `<div class="grade" style="padding-top:1rem">${r.map(card).join('')}</div>`
       : `<p class="vazio">${state.view === 'lista' ? 'Sua lista está vazia. Toque no ♡ de um título para salvar.' : 'Nenhum título encontrado.'}</p>`;
   } else {
     const porAno = [...lista].sort((a, b) => b.ano - a.ano);
@@ -94,10 +149,10 @@ function render() {
     [...new Set(lista.flatMap(i => i.generos))].sort().forEach(g => html += linha(g, lista.filter(i => i.generos.includes(g))));
     const aviso = state.erros.length ? `<p class="vazio" style="padding-top:${state.view === 'inicio' ? '5rem' : '1rem'};color:#ff6b6b">Não consegui ler: ${esc(state.erros.join('; '))}. Confira se o arquivo existe e se o JSON está válido.</p>` : '';
     el.innerHTML = aviso + (html || `<p class="vazio">${state.view === 'series' ? 'Nenhuma série encontrada no catalogoseries.json.' : 'Catálogo vazio.'}</p>`);
-    if (state.view !== 'inicio') el.style.paddingTop = '6rem'; else el.style.paddingTop = '';
-    if (state.view !== 'inicio') $('#filtros').hidden = false;
   }
-  if (state.view === 'inicio' && !grade) desenharHero();
+
+  if (mostrarHero) desenharHero();
+  else { clearInterval(state.heroTimer); state.heroTimer = null; } // para o carrossel quando o hero está escondido
 }
 
 function preencherFiltros(lista) {
@@ -113,8 +168,9 @@ function desenharHero() {
   const i = state.destaques[state.heroIdx % state.destaques.length];
   if (!i) { $('#hero').innerHTML = ''; return; }
   const h = $('#hero');
-  h.style.backgroundImage = (i.banner || i.capa) ? `url("${i.banner || i.capa}")` : 'linear-gradient(135deg,#4a0000,#000)';
-  if (i.banner && i.capa) { const im = new Image(); im.onerror = () => { h.style.backgroundImage = `url("${i.capa}")`; }; im.src = i.banner; }
+  const img = i.banner || i.capa;
+  h.style.backgroundImage = img ? cssUrl(img) : 'linear-gradient(135deg,#4a0000,#000)';
+  if (i.banner && i.capa) { const im = new Image(); im.onerror = () => { h.style.backgroundImage = cssUrl(i.capa); }; im.src = i.banner; }
   h.innerHTML = `<div class="hero-info" id="heroInfo">
     <h1>${esc(i.titulo)}</h1>
     <div class="meta"><b>Em destaque</b> · ${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div>
@@ -132,7 +188,7 @@ function abrirInfo(key) {
   const i = achar(key); if (!i) return;
   const fav = state.favs.has(key);
   $('#modalCorpo').innerHTML = `
-    <div class="m-banner" style="background-image:${i.banner || i.capa ? `url('${esc(i.banner || i.capa)}')` : 'linear-gradient(135deg,#4a0000,#111)'}"></div>
+    <div class="m-banner"></div>
     <div class="m-corpo">
       <h2>${esc(i.titulo)}</h2>
       <div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''} · ${i.tipo === 'serie' ? 'Série' : 'Filme'}</div>
@@ -141,6 +197,8 @@ function abrirInfo(key) {
         <button class="btn btn-play" data-assistir="${esc(key)}">▶ Assistir</button>
         <button class="btn btn-sec btn-fav ${fav ? 'on' : ''}" data-favm="${esc(key)}">${fav ? '♥ Na minha lista' : '♡ Minha lista'}</button>
       </div></div>`;
+  const img = i.banner || i.capa;
+  $('#modalCorpo .m-banner').style.backgroundImage = img ? cssUrl(img) : 'linear-gradient(135deg,#4a0000,#111)';
   $('#modal').hidden = false; document.body.classList.add('travado');
 }
 function fecharInfo() { $('#modal').hidden = true; if ($('#player').hidden) document.body.classList.remove('travado'); }
@@ -159,9 +217,10 @@ function abrirPlayer(key, t = 0, e = 0) {
   $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>`;
   let html = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div><p>${esc(i.descricao)}</p>`;
   if (temps.length) {
+    const ultimo = t === temps.length - 1 && e === temps[t].episodios.length - 1;
     html += `<div class="eps">
       <select id="selTemp" aria-label="Temporada">${temps.map((x, n) => `<option value="${n}" ${n === t ? 'selected' : ''}>Temporada ${x.temporada}</option>`).join('')}</select>
-      <button class="btn btn-sec" id="proxEp" type="button">Próximo episódio ▶</button>
+      ${ultimo ? '' : '<button class="btn btn-sec" id="proxEp" type="button">Próximo episódio ▶</button>'}
       <div class="eps-lista">${temps[t].episodios.map((x, n) => `<button class="ep ${n === e ? 'on' : ''}" data-ep="${n}" title="${esc(x.titulo || '')}">${n + 1}</button>`).join('')}</div>
     </div>`;
   }
@@ -170,6 +229,7 @@ function abrirPlayer(key, t = 0, e = 0) {
 }
 function proximoEp() {
   const temps = temporadasDe(achar(state.pk) || {});
+  if (!temps.length) return;
   let t = state.pt, e = state.pe + 1;
   if (e >= temps[t].episodios.length) { t++; e = 0; }
   if (t < temps.length) abrirPlayer(state.pk, t, e);
@@ -179,6 +239,11 @@ function fecharPlayer() {
   $('#player').hidden = true; $('#videoWrap').innerHTML = '';
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   document.body.classList.remove('travado');
+}
+/* voltar: se o usuário abriu o link direto, history.back() sairia do site */
+function voltar() {
+  if (state.navegou) history.back();
+  else { history.replaceState(null, '', location.pathname + location.search); fecharPlayer(); }
 }
 async function telaCheia() {
   const el = $('#videoWrap');
@@ -193,17 +258,29 @@ async function telaCheia() {
   } catch { alert('Use o botão de tela cheia do próprio player.'); }
 }
 function rota() {
-  const h = decodeURIComponent(location.hash);
+  let h = location.hash;
+  try { h = decodeURIComponent(h); } catch {}
   if (h.startsWith('#assistir-')) abrirPlayer(h.slice(10)); else fecharPlayer();
 }
-function assistir(key) { location.hash = 'assistir-' + encodeURIComponent(key); }
+function assistir(key) { state.navegou = true; location.hash = 'assistir-' + encodeURIComponent(key); }
 
 /* ---------- Eventos ---------- */
 document.addEventListener('click', e => {
   const t = e.target;
   const fav = t.closest('[data-fav]'), favm = t.closest('[data-favm]'), as = t.closest('[data-assistir]'), inf = t.closest('[data-info]'), c = t.closest('.card');
-  if (fav) { e.stopPropagation(); alternarFav(fav.dataset.fav); render(); return; }
-  if (favm) { alternarFav(favm.dataset.favm); abrirInfo(favm.dataset.favm); render(); return; }
+  if (fav) {
+    const key = fav.dataset.fav;
+    alternarFav(key);
+    if (state.view === 'lista') render(); else atualizarCoracoes(key);
+    return;
+  }
+  if (favm) {
+    const key = favm.dataset.favm;
+    alternarFav(key);
+    abrirInfo(key);
+    if (state.view === 'lista') render(); else atualizarCoracoes(key);
+    return;
+  }
   if (as) { assistir(as.dataset.assistir); return; }
   if (inf) { abrirInfo(inf.dataset.info); return; }
   const ep = t.closest('[data-ep]'); if (ep) { abrirPlayer(state.pk, state.pt, +ep.dataset.ep); return; }
@@ -212,12 +289,12 @@ document.addEventListener('click', e => {
   if (t === $('#modal')) fecharInfo();
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { if (!$('#player').hidden) history.back(); else fecharInfo(); }
-  if ((e.key === 'Enter') && e.target.classList?.contains('card')) abrirInfo(e.target.dataset.key);
+  if (e.key === 'Escape') { if (!$('#player').hidden) voltar(); else fecharInfo(); }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('card')) { e.preventDefault(); abrirInfo(e.target.dataset.key); }
 });
 document.addEventListener('change', e => { if (e.target.id === 'selTemp') abrirPlayer(state.pk, +e.target.value, 0); });
 $('#fecharModal').onclick = fecharInfo;
-$('#voltar').onclick = () => { location.hash ? history.back() : fecharPlayer(); };
+$('#voltar').onclick = voltar;
 $('#telaCheia').onclick = telaCheia;
 window.addEventListener('hashchange', rota);
 window.addEventListener('scroll', () => $('#topo').classList.toggle('solido', scrollY > 40), { passive: true });
