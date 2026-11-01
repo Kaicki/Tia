@@ -1,4 +1,3 @@
-/* TIAFLIX — tudo é carregado de catalogo.json e catalogoseries.json */
 const $ = s => document.querySelector(s);
 const FAV_KEY = 'tiaflix:favoritos';
 const state = {
@@ -9,13 +8,11 @@ const state = {
 
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const norm = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-/* url() seguro para CSS (aspas, barras e quebras de linha quebrariam o estilo) */
 const cssUrl = u => `url("${String(u).replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")`;
 
 const sb = window.tiaflixAuth || null;
 let userId = null;
 
-/* ---------- Favoritos (LocalStorage + conta) ---------- */
 function lerFavs() { try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY)) || []); } catch { return new Set(); } }
 function salvarFavs() { try { localStorage.setItem(FAV_KEY, JSON.stringify([...state.favs])); } catch {} }
 
@@ -56,7 +53,7 @@ if (sb) {
       state.favs = new Set(); salvarFavs();
       if (state.itens.length) render();
     } else if (userId) {
-      setTimeout(sincronizarFavs, 0); // fora do callback, como o Supabase recomenda
+      setTimeout(sincronizarFavs, 0);
     }
   });
 }
@@ -120,9 +117,9 @@ function distancia(a, b) {
 }
 
 function palavraCasa(p, palavrasTitulo, titulo) {
-  if (titulo.includes(p)) return true;          // pedaço de palavra
+  if (titulo.includes(p)) return true;
   if (p.length < 4) return false;
-  const tol = p.length >= 8 ? 2 : 1;            // erros permitidos
+  const tol = p.length >= 8 ? 2 : 1;
   return palavrasTitulo.some(w =>
     distancia(p, w) <= tol || distancia(p, w.slice(0, p.length)) <= tol);
 }
@@ -155,7 +152,7 @@ function card(i) {
     <div class="ph">${esc(i.titulo)}</div>
     ${i.capa ? `<img src="${esc(i.capa)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
     <div class="tit">${esc(i.titulo)} · ${i.ano || ''}</div>
-    <button class="coracao ${fav ? 'on' : ''}" data-fav="${esc(i.key)}" aria-label="Favoritar">${fav ? '♥' : '♡'}</button>
+    <button class="coracao ${fav ? 'on' : ''}" data-fav="${esc(i.key)}" aria-label="Favoritar">${fav ? '❤️' : '🤍'}</button>
   </div>`;
 }
 const linha = (t, l) => l.length ? `<section class="linha"><h2>${esc(t)}</h2><div class="trilho">${l.map(card).join('')}</div></section>` : '';
@@ -175,7 +172,7 @@ function render() {
   if (grade) {
     const r = filtrar(lista);
     el.innerHTML = r.length ? `<div class="grade" style="padding-top:1rem">${r.map(card).join('')}</div>`
-      : `<p class="vazio">${state.view === 'lista' ? 'Sua lista está vazia. Toque no ♡ de um título para salvar.' : 'Nenhum título encontrado.'}</p>`;
+      : `<p class="vazio">${state.view === 'lista' ? 'Sua lista está vazia. Toque no 🤍 de um título para salvar.' : 'Nenhum título encontrado.'}</p>`;
   } else {
     const porAno = [...lista].sort((a, b) => b.ano - a.ano);
     const recentes = [...lista].sort((a, b) => String(b.adicionado || '').localeCompare(String(a.adicionado || '')));
@@ -189,7 +186,7 @@ function render() {
   }
 
   if (mostrarHero) desenharHero();
-  else { clearInterval(state.heroTimer); state.heroTimer = null; } // para o carrossel quando o hero está escondido
+  else { clearInterval(state.heroTimer); state.heroTimer = null; }
 }
 
 function preencherFiltros(lista) {
@@ -230,7 +227,7 @@ function abrirInfo(key) {
       <p>${esc(i.descricao)}</p>
       <div class="botoes">
         <button class="btn btn-play" data-assistir="${esc(key)}">▶ Assistir</button>
-        <button class="btn btn-sec btn-fav ${fav ? 'on' : ''}" data-favm="${esc(key)}">${fav ? '♥ Na minha lista' : '♡ Minha lista'}</button>
+        <button class="btn btn-sec btn-fav ${fav ? 'on' : ''}" data-favm="${esc(key)}">${fav ? '❤️ Na minha lista' : '🤍 Minha lista'}</button>
       </div></div>`;
   const img = i.banner || i.capa;
   $('#modalCorpo .m-banner').style.backgroundImage = img ? cssUrl(img) : 'linear-gradient(135deg,#4a0000,#111)';
@@ -274,7 +271,6 @@ function fecharPlayer() {
   if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
   document.body.classList.remove('travado');
 }
-
 function voltar() {
   if (state.navegou) history.back();
   else { history.replaceState(null, '', location.pathname + location.search); fecharPlayer(); }
