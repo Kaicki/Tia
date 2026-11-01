@@ -6,6 +6,68 @@
 <meta name="theme-color" content="#000000">
 <title>TIAFLIX</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- Estilos da conta (login/cadastro). Pode mover para o style.css se preferir. -->
+<style>
+  [hidden] { display: none !important; }
+
+  .conta { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+  .conta button {
+    background: #b20710; color: #fff; border: 0; border-radius: 4px;
+    padding: 8px 14px; font: inherit; font-size: 14px; cursor: pointer;
+  }
+  .conta button.sec { background: #222; }
+  .conta button:focus-visible,
+  .auth-card button:focus-visible,
+  .auth-card input:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  #contaEmail {
+    color: #ddd; font-size: 13px; max-width: 120px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+
+  .auth-fundo {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0, 0, 0, .85);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .auth-card {
+    position: relative; width: 100%; max-width: 360px;
+    background: #141414; color: #fff; border-radius: 8px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
+  }
+  .auth-card h2 { margin: 0 0 4px; font-size: 24px; }
+  .auth-card p.sub { margin: 0 0 18px; color: #aaa; font-size: 14px; }
+  .auth-card label { display: block; margin: 12px 0 4px; font-size: 13px; color: #ccc; }
+  .auth-card input {
+    width: 100%; box-sizing: border-box; padding: 12px;
+    background: #2a2a2a; color: #fff; border: 1px solid #3a3a3a;
+    border-radius: 4px; font: inherit; font-size: 16px;
+  }
+  .auth-card .principal {
+    width: 100%; margin-top: 18px; padding: 13px;
+    background: #b20710; color: #fff; border: 0; border-radius: 4px;
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .auth-card .principal:disabled { opacity: .6; cursor: wait; }
+  .auth-card .trocar {
+    display: block; width: 100%; margin-top: 14px; background: none;
+    border: 0; color: #bbb; font: inherit; font-size: 14px; cursor: pointer;
+  }
+  .auth-card .trocar b { color: #fff; }
+  .auth-card .fechar-auth {
+    position: absolute; top: 8px; right: 12px; background: none; border: 0;
+    color: #aaa; font-size: 28px; line-height: 1; cursor: pointer;
+  }
+  #authMsg { min-height: 20px; margin: 12px 0 0; font-size: 14px; }
+  #authMsg.erro { color: #ff6b6b; }
+  #authMsg.ok { color: #6bdc8b; }
+
+  @media (max-width: 600px) {
+    #contaEmail { display: none; }
+  }
+</style>
 </head>
 <body>
 <header id="topo">
@@ -17,6 +79,11 @@
   </nav>
   <div class="busca">
     <input type="search" id="busca" placeholder="Buscar título..." autocomplete="off" aria-label="Buscar">
+  </div>
+  <div class="conta">
+    <button type="button" id="btnEntrar">Entrar</button>
+    <span id="contaEmail" hidden></span>
+    <button type="button" id="btnSair" class="sec" hidden>Sair</button>
   </div>
 </header>
 
@@ -49,7 +116,143 @@
   <div id="playerInfo" class="player-info"></div>
 </section>
 
+<!-- Janela de login / cadastro -->
+<div id="authModal" class="auth-fundo" hidden>
+  <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitulo">
+    <button type="button" class="fechar-auth" id="authFechar" aria-label="Fechar">&times;</button>
+    <h2 id="authTitulo">Entrar</h2>
+    <p class="sub" id="authSub">Use seu e-mail e senha para acessar.</p>
+
+    <label for="authEmail">E-mail</label>
+    <input id="authEmail" type="email" autocomplete="email" inputmode="email">
+
+    <label for="authSenha">Senha</label>
+    <input id="authSenha" type="password" autocomplete="current-password" minlength="6">
+
+    <button type="button" class="principal" id="authEnviar">Entrar</button>
+    <p id="authMsg" role="status"></p>
+    <button type="button" class="trocar" id="authTrocar">Ainda não tem conta? <b>Criar conta</b></button>
+  </div>
+</div>
+
 <footer>© TIAFLIX / BERTAGLIA </footer>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var SUPABASE_URL = "https://celexcohsnbjhjbletzv.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_WfAtwu9zliLD6jWnavtpcw_6VWvf69J";
+
+  var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  window.tiaflixAuth = sb; // para usar no script.js, se precisar
+
+  var $ = function (id) { return document.getElementById(id); };
+  var modal = $("authModal"), titulo = $("authTitulo"), sub = $("authSub");
+  var inEmail = $("authEmail"), inSenha = $("authSenha");
+  var btnEnviar = $("authEnviar"), btnTrocar = $("authTrocar"), msg = $("authMsg");
+  var modo = "entrar"; // "entrar" ou "criar"
+
+  function mostrarMsg(texto, tipo) {
+    msg.textContent = texto || "";
+    msg.className = tipo || "";
+  }
+
+  function definirModo(novo) {
+    modo = novo;
+    mostrarMsg("");
+    if (modo === "entrar") {
+      titulo.textContent = "Entrar";
+      sub.textContent = "Use seu e-mail e senha para acessar.";
+      btnEnviar.textContent = "Entrar";
+      btnTrocar.innerHTML = "Ainda não tem conta? <b>Criar conta</b>";
+      inSenha.setAttribute("autocomplete", "current-password");
+    } else {
+      titulo.textContent = "Criar conta";
+      sub.textContent = "Cadastre-se com e-mail e uma senha de pelo menos 6 caracteres.";
+      btnEnviar.textContent = "Criar conta";
+      btnTrocar.innerHTML = "Já tem conta? <b>Entrar</b>";
+      inSenha.setAttribute("autocomplete", "new-password");
+    }
+  }
+
+  function abrir(novoModo) {
+    definirModo(novoModo || "entrar");
+    modal.hidden = false;
+    inEmail.focus();
+  }
+  function fechar() { modal.hidden = true; }
+
+  function traduzirErro(e) {
+    var t = (e && e.message || "").toLowerCase();
+    if (t.indexOf("invalid login") > -1) return "E-mail ou senha incorretos.";
+    if (t.indexOf("already registered") > -1) return "Este e-mail já tem conta. Toque em Entrar.";
+    if (t.indexOf("password should be") > -1) return "A senha precisa ter pelo menos 6 caracteres.";
+    if (t.indexOf("valid email") > -1 || t.indexOf("invalid email") > -1) return "Digite um e-mail válido.";
+    if (t.indexOf("email not confirmed") > -1) return "Confirme seu e-mail pelo link que enviamos.";
+    if (t.indexOf("rate limit") > -1) return "Muitas tentativas. Aguarde um pouco e tente de novo.";
+    return "Não foi possível concluir. " + (e && e.message ? e.message : "");
+  }
+
+  async function enviar() {
+    var email = inEmail.value.trim();
+    var senha = inSenha.value;
+    if (!email || !senha) { mostrarMsg("Preencha e-mail e senha.", "erro"); return; }
+
+    btnEnviar.disabled = true;
+    mostrarMsg("Aguarde...");
+    try {
+      if (modo === "criar") {
+        var r = await sb.auth.signUp({ email: email, password: senha });
+        if (r.error) throw r.error;
+        if (r.data.session) {
+          mostrarMsg("Conta criada! Você já está logado.", "ok");
+          setTimeout(fechar, 900);
+        } else {
+          mostrarMsg("Conta criada! Confirme pelo link enviado ao seu e-mail.", "ok");
+        }
+      } else {
+        var l = await sb.auth.signInWithPassword({ email: email, password: senha });
+        if (l.error) throw l.error;
+        mostrarMsg("Login feito!", "ok");
+        setTimeout(fechar, 600);
+      }
+    } catch (e) {
+      mostrarMsg(traduzirErro(e), "erro");
+    } finally {
+      btnEnviar.disabled = false;
+    }
+  }
+
+  function atualizarTopo(session) {
+    var logado = !!(session && session.user);
+    $("btnEntrar").hidden = logado;
+    $("btnSair").hidden = !logado;
+    $("contaEmail").hidden = !logado;
+    $("contaEmail").textContent = logado ? session.user.email : "";
+  }
+
+  $("btnEntrar").addEventListener("click", function () { abrir("entrar"); });
+  $("btnSair").addEventListener("click", function () { sb.auth.signOut(); });
+  $("authFechar").addEventListener("click", fechar);
+  btnTrocar.addEventListener("click", function () {
+    definirModo(modo === "entrar" ? "criar" : "entrar");
+  });
+  btnEnviar.addEventListener("click", enviar);
+  inSenha.addEventListener("keydown", function (e) { if (e.key === "Enter") enviar(); });
+  inEmail.addEventListener("keydown", function (e) { if (e.key === "Enter") inSenha.focus(); });
+  modal.addEventListener("click", function (e) { if (e.target === modal) fechar(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) fechar();
+  });
+
+  sb.auth.getSession().then(function (r) { atualizarTopo(r.data.session); });
+  sb.auth.onAuthStateChange(function (_evento, session) { atualizarTopo(session); });
+})();
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
