@@ -7,7 +7,6 @@
 <title>TIAFLIX</title>
 <link rel="stylesheet" href="style.css">
 
-<!-- Estilos da conta (login/cadastro). Pode mover para o style.css se preferir. -->
 <style>
   [hidden] { display: none !important; }
 
@@ -117,7 +116,6 @@
   <div id="playerInfo" class="player-info"></div>
 </section>
 
-<!-- Janela de login / cadastro -->
 <div id="authModal" class="auth-fundo" hidden>
   <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitulo">
     <button type="button" class="fechar-auth" id="authFechar" aria-label="Fechar">&times;</button>
@@ -138,7 +136,6 @@
 
 <footer>© TIAFLIX / BERTAGLIA </footer>
 
-<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
 (function () {
@@ -148,13 +145,13 @@
   var SUPABASE_KEY = "sb_publishable_WfAtwu9zliLD6jWnavtpcw_6VWvf69J";
 
   var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-  window.tiaflixAuth = sb; // para usar no script.js, se precisar
+  window.tiaflixAuth = sb;
 
   var $ = function (id) { return document.getElementById(id); };
   var modal = $("authModal"), titulo = $("authTitulo"), sub = $("authSub");
   var inEmail = $("authEmail"), inSenha = $("authSenha");
   var btnEnviar = $("authEnviar"), btnTrocar = $("authTrocar"), msg = $("authMsg");
-  var modo = "entrar"; // "entrar" ou "criar"
+  var modo = "entrar";
 
   function mostrarMsg(texto, tipo) {
     msg.textContent = texto || "";
