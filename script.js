@@ -305,4 +305,27 @@ $('#fGenero').onchange = e => { state.genero = e.target.value; render(); };
 $('#fAno').onchange = e => { state.ano = e.target.value; render(); };
 $('#limpar').onclick = () => { state.genero = state.ano = state.busca = ''; $('#busca').value = ''; render(); };
 
+const supabase = window.supabase.createClient(
+  "https://celexcohsnbjhjbletzv.supabase.co",
+  "sb_publishable_WfAtwu9zliLD6jWnavtpcw_6VWvf69J"
+);
+
+const msg = (t) => (document.getElementById("msg").textContent = t);
+const campos = () => [
+  document.getElementById("email").value.trim(),
+  document.getElementById("senha").value,
+];
+
+async function criarConta() {
+  const [email, password] = campos();
+  const { error } = await supabase.auth.signUp({ email, password });
+  msg(error ? error.message : "Conta criada! Verifique seu e-mail, se pedir confirmação.");
+}
+
+async function entrar() {
+  const [email, password] = campos();
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  msg(error ? error.message : "Login feito!");
+}
+
 iniciar();
