@@ -12,10 +12,59 @@ const norm = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '
 /* url() seguro para CSS (aspas, barras e quebras de linha quebrariam o estilo) */
 const cssUrl = u => `url("${String(u).replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")`;
 
-/* ---------- Favoritos (LocalStorage) ---------- */
+/* ---------- Conta (Supabase) ----------
+   O cliente é criado no index.html e fica em window.tiaflixAuth.
+   Se o Supabase não carregar, o site continua funcionando só com o LocalStorage. */
+const sb = window.tiaflixAuth || null;
+let userId = null;
+
+/* ---------- Favoritos (LocalStorage + conta) ---------- */
 function lerFavs() { try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY)) || []); } catch { return new Set(); } }
 function salvarFavs() { try { localStorage.setItem(FAV_KEY, JSON.stringify([...state.favs])); } catch {} }
-function alternarFav(key) { state.favs.has(key) ? state.favs.delete(key) : state.favs.add(key); salvarFavs(); }
+
+async function alternarFav(key) {
+  const ligou = !state.favs.has(key);
+  if (ligou) state.favs.add(key); else state.favs.delete(key);
+  salvarFavs();
+  if (!sb || !userId) return;
+  try {
+    const r = ligou
+      ? await sb.from('favoritos').upsert({ titulo_id: key }, { onConflict: 'user_id,titulo_id', ignoreDuplicates: true })
+      : await sb.from('favoritos').delete().eq('titulo_id', key);
+    if (r.error) throw r.error;
+  } catch (e) { console.error('Erro ao salvar favorito na conta', e); }
+}
+
+/* ao entrar: junta os favoritos deste aparelho com os da conta */
+async function sincronizarFavs() {
+  if (!sb || !userId) return;
+  try {
+    const { data, error } = await sb.from('favoritos').select('titulo_id');
+    if (error) throw error;
+    const remoto = new Set(data.map(r => r.titulo_id));
+    const soLocal = [...state.favs].filter(k => !remoto.has(k));
+    if (soLocal.length) {
+      const r = await sb.from('favoritos').upsert(soLocal.map(k => ({ titulo_id: k })), { onConflict: 'user_id,titulo_id', ignoreDuplicates: true });
+      if (r.error) throw r.error;
+    }
+    state.favs = new Set([...remoto, ...state.favs]);
+    salvarFavs();
+    if (state.itens.length) render();
+  } catch (e) { console.error('Erro ao sincronizar favoritos', e); }
+}
+
+if (sb) {
+  sb.auth.onAuthStateChange((evento, session) => {
+    userId = session?.user?.id || null;
+    if (evento === 'SIGNED_OUT') {
+      state.favs = new Set(); salvarFavs();
+      if (state.itens.length) render();
+    } else if (userId) {
+      setTimeout(sincronizarFavs, 0); // fora do callback, como o Supabase recomenda
+    }
+  });
+}
+
 /* atualiza os corações na tela sem refazer tudo (não perde a posição das linhas) */
 function atualizarCoracoes(key) {
   const on = state.favs.has(key);
@@ -304,28 +353,5 @@ $('#busca').oninput = e => { state.busca = e.target.value.trim(); render(); };
 $('#fGenero').onchange = e => { state.genero = e.target.value; render(); };
 $('#fAno').onchange = e => { state.ano = e.target.value; render(); };
 $('#limpar').onclick = () => { state.genero = state.ano = state.busca = ''; $('#busca').value = ''; render(); };
-
-const supabase = window.supabase.createClient(
-  "https://celexcohsnbjhjbletzv.supabase.co",
-  "sb_publishable_WfAtwu9zliLD6jWnavtpcw_6VWvf69J"
-);
-
-const msg = (t) => (document.getElementById("msg").textContent = t);
-const campos = () => [
-  document.getElementById("email").value.trim(),
-  document.getElementById("senha").value,
-];
-
-async function criarConta() {
-  const [email, password] = campos();
-  const { error } = await supabase.auth.signUp({ email, password });
-  msg(error ? error.message : "Conta criada! Verifique seu e-mail, se pedir confirmação.");
-}
-
-async function entrar() {
-  const [email, password] = campos();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  msg(error ? error.message : "Login feito!");
-}
 
 iniciar();
