@@ -1,185 +1,163 @@
 [
   {
-    "id": 3,
+    "id": 1,
     "titulo": "Homem-Aranha",
     "ano": 2002,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h01min",
     "descricao": "Peter Parker ganha habilidades especiais após ser picado por uma aranha geneticamente modificada.",
-    "capa": "https://image.tmdb.org/t/p/original/RbZQL5hXmydecu82UHw9ZGyytB.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/qNssp9yyxfl5RLPG143BtahfaQe.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1-Zo7y8-UYBllwdME-SnbEVprAfGoK3y5/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 4,
+    "id": 2,
     "titulo": "Homem-Aranha 2",
     "ano": 2004,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h07min",
     "descricao": "Peter Parker enfrenta dificuldades para equilibrar sua vida pessoal com suas responsabilidades como herói.",
-    "capa": "https://image.tmdb.org/t/p/original/y06FivvCfqapHB3iETOtbAqWdkD.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/cnfqojGmJBmCcrKk52NdGOYnAfU.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1-G8oArmIWMBSNPl_wCQJMjkDbBZxcj62/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 5,
+    "id": 3,
     "titulo": "Homem-Aranha 3",
     "ano": 2007,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h19min",
     "descricao": "Peter Parker enfrenta novos inimigos e precisa lidar com um misterioso simbionte que altera sua personalidade.",
-    "capa": "https://image.tmdb.org/t/p/original/lzzOk1QYmOgvn1lScwXa1vLqBdr.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/uKNT3nHp0qCw9RbNpKj5OeXkeHS.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1BStPBch1Ogw_DQjHGQWK4dTCMO3zg6vN/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 6,
+    "id": 4,
     "titulo": "O Espetacular Homem-Aranha",
     "ano": 2012,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h16min",
     "descricao": "Peter Parker descobre segredos sobre seu passado enquanto aprende a lidar com seus poderes.",
-    "capa": "https://image.tmdb.org/t/p/original/gxSsFBCFuDhVQMCuIDoZcmHOqlY.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/bNYJRzkWcLFAf4paErndjQu2kCL.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1yO8e8zFb3poHBZ7RGrbbXZWmib8Xz0xL/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 7,
+    "id": 5,
     "titulo": "O Espetacular Homem-Aranha 2",
     "ano": 2014,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h21min",
     "descricao": "Peter Parker enfrenta novos desafios enquanto protege Nova York de ameaças perigosas.",
-    "capa": "https://image.tmdb.org/t/p/original/6VyN2MXajYyAc0IkxS8KXltMsTj.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/8hWJMoJhGjxAgsRt7YRem96Qbae.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1okhUQTvvYL_XNiQtVcQNxpR4EBdTCEXa/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 8,
+    "id": 6,
     "titulo": "Homem-Aranha: De Volta ao Lar",
     "ano": 2017,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h13min",
     "descricao": "Peter Parker tenta conciliar sua vida escolar com a responsabilidade de ser um super-herói.",
-    "capa": "https://image.tmdb.org/t/p/original/9Fgs1ewIZiBBTto1XDHeBN0D8ug.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/lAsr1ytUq0ATWdCbcjf59pupPFy.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1WhukOTn38mTv_xSo99Pqh7KK4lrXK-CxZA/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 9,
+    "id": 7,
     "titulo": "Homem-Aranha: Longe de Casa",
     "ano": 2019,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h09min",
     "descricao": "Durante uma viagem pela Europa, Peter Parker precisa enfrentar uma nova ameaça.",
-    "capa": "https://image.tmdb.org/t/p/original/8V0hpq8BUzauB06eEfr7AmyTzbK.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1MIsOnd_BODMD7jndoiZHHRj8Dv6ka4ex/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 10,
+    "id": 8,
     "titulo": "Homem-Aranha: Sem Volta para Casa",
     "ano": 2021,
     "genero": ["Ação", "Aventura", "Ficção científica"],
     "duracao": "2h28min",
     "descricao": "Peter Parker enfrenta as consequências de ter sua identidade revelada ao mundo.",
-    "capa": "https://image.tmdb.org/t/p/original/mwrtY2vywSnN8hRmwoCWinoUgyJ.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/5BjetzdVpWkPNKUIlpasnXVSwCP.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1xkurQD44X-eoYNcaHXiqnM8gEghCsfIo/view?usp=drivesdk",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 11,
+    "id": 9,
     "titulo": "Homem-Aranha no Aranhaverso",
     "ano": 2018,
     "genero": ["Animação", "Ação", "Aventura"],
     "duracao": "1h57min",
     "descricao": "Miles Morales descobre seus poderes e conhece diferentes versões do Homem-Aranha de outros universos.",
-    "capa": "https://image.tmdb.org/t/p/original/ejqquyk7r3GLXPir62rksUmPKj5.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/e7CE5vx4KqUuz0peKdHRVZB0Pn8.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/file/d/1oTn6HXod8EHS5JlBibnhjPSrqVhgNwjV/view",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-    "id": 12,
+    "id": 10,
     "titulo": "Homem-Aranha: Através do Aranhaverso",
     "ano": 2023,
     "genero": ["Animação", "Ação", "Aventura"],
     "duracao": "2h20min",
     "descricao": "Miles Morales atravessa diferentes universos e encontra uma sociedade de Homens-Aranha.",
-    "capa": "https://image.tmdb.org/t/p/original/fBS6y0LYX4kU6pPSBYMdQy6SIHX.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
+    "capa": "",
+    "banner": "",
     "link": "https://drive.google.com/drive/folders/1xfgJgJh-prbmFZJjHlyYeztyRfQDgQQh",
     "destaque": false,
     "popular": false,
     "adicionado": "2026-11-01"
   },
   {
-  "id": 2,
-  "titulo": "Homem-Aranha: Um Novo Dia",
-  "ano": 2026,
-  "genero": [
-    "Ação",
-    "Aventura",
-    "Ficção científica"
-  ],
-  "duracao": "",
-  "descricao": "Peter Parker enfrenta uma nova fase de sua vida como Homem-Aranha.",
-  "capa": "https://image.tmdb.org/t/p/original/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg",
-  "banner": "https://image.tmdb.org/t/p/original/nwA2uzjjtDYHF0KxXL2YvxAHLSA.jpg",
-  "link": "https://drive.google.com/file/d/1eW0BR7_cimiBG9rmD1EYK1V8eIfeEQgb/view?usp=drivesdk",
-  "destaque": false,
-  "popular": false,
-  "adicionado": "2026-10-31"
-  },
-  {
-    "id": 1,
-    "titulo": "A Era do Gelo",
-    "ano": 2002,
-    "genero": [
-      "Animação"
-    ],
-    "duracao": "1h 21m",
-    "descricao": "Sid e Manny enfrentam aventuras congelantes.",
-    "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI81OGQpkjPFAh3ZuzOp4H7YPFTDy7JGDEC6rJDuy1Zw&s=10",
-    "banner": "",
-    "link": "https://drive.google.com/file/d/1A2tHf77Gq0m9upcZhz_0C9LW0XaY5ZDM/view",
+    "id": 11,
+    "titulo": "Homem-Aranha: Um Novo Dia",
+    "ano": 2026,
+    "genero": ["Ação", "Aventura", "Ficção científica"],
+    "duracao": "",
+    "descricao": "Peter Parker enfrenta uma nova fase de sua vida como Homem-Aranha.",
+    "capa": "https://image.tmdb.org/t/p/original/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/nwA2uzjjtDYHF0KxXL2YvxAHLSA.jpg",
+    "link": "https://drive.google.com/file/d/1eW0BR7_cimiBG9rmD1EYK1V8eIfeEQgb/view?usp=drivesdk",
     "destaque": false,
     "popular": false,
-    "adicionado": "2026-08-01"
+    "adicionado": "2026-10-31"
   },
   {
-    "id": 2,
+    "id": 12,
     "titulo": "WALL-E",
     "ano": 2008,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 38m",
     "descricao": "Um robô descobre o amor e a esperança.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2sD2MrgnTDuGRtMq4IWj_4xzxmLZMQunaiF2Q83h7AcIeRcMW8coHbW0&s=10",
@@ -190,12 +168,10 @@
     "adicionado": "2026-08-02"
   },
   {
-    "id": 3,
+    "id": 13,
     "titulo": "Logan",
     "ano": 2017,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 17m",
     "descricao": "O Wolverine enfrenta desafios finais e intensos.",
     "capa": "https://br.web.img3.acsta.net/c_310_420/pictures/16/10/05/19/59/363613.jpg",
@@ -206,12 +182,10 @@
     "adicionado": "2026-08-03"
   },
   {
-    "id": 4,
+    "id": 14,
     "titulo": "Carros",
     "ano": 2006,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 57m",
     "descricao": "Relâmpago McQueen, um carro de corrida ambicioso, fica encalhado na cidade abandonada de Radiator Springs e é forçado a consertar a rua principal, conhecendo moradores como Mate e Doc Hudson.",
     "capa": "https://play-lh.googleusercontent.com/kHt8qbche40zkE6yZwA8IUe5ARINp4PjrJ5mi622GEzQFYWCaGTQDAl58rrRKRKyhnD2",
@@ -222,12 +196,10 @@
     "adicionado": "2026-08-04"
   },
   {
-    "id": 5,
+    "id": 15,
     "titulo": "Carros 2",
     "ano": 2011,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 49m",
     "descricao": "Relâmpago McQueen e Mate competem no primeiro Grand Prix Mundial, uma corrida que acontece no Japão e na Europa para determinar o carro mais rápido do mundo.",
     "capa": "https://upload.wikimedia.org/wikipedia/pt/thumb/7/7e/Carros_2_P%C3%B4ster.jpg/250px-Carros_2_P%C3%B4ster.jpg",
@@ -238,12 +210,10 @@
     "adicionado": "2026-08-05"
   },
   {
-    "id": 6,
+    "id": 16,
     "titulo": "Carros 3",
     "ano": 2017,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 49m",
     "descricao": "Relâmpago McQueen enfrenta uma nova geração de carros de corrida e precisa se reinventar para continuar na pista.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6KrxJxQzJGNHzh-Aj21C94x-EbkjjOg62-p65S4-ICfbsMGR9It1XhPqR&s=10",
@@ -254,44 +224,10 @@
     "adicionado": "2026-08-06"
   },
   {
-    "id": 7,
-    "titulo": "A Era do Gelo 2",
-    "ano": 2006,
-    "genero": [
-      "Animação"
-    ],
-    "duracao": "1h 49m",
-    "descricao": "A era glacial está chegando ao fim e toneladas de gelo estão prestes a derreter, o que inundaria o vale. Manfred, Diego e Sid precisam encontrar uma saída.",
-    "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ5kdHuPLFdSPX7YIxQFCy0KaC23o1bRvRNw&s",
-    "banner": "https://m.media-amazon.com/images/S/pv-target-images/f724d213281a49563b539028162160d86552284381740671e3aaddbd9d825077._SX1080_FMjpg_.jpg",
-    "link": "https://drive.google.com/file/d/1KhUII2uqa8AvIBAMKE2WGbc0x7GbXNpr/view",
-    "destaque": false,
-    "popular": false,
-    "adicionado": "2026-08-07"
-  },
-  {
-    "id": 8,
-    "titulo": "A Era do Gelo 3",
-    "ano": 2009,
-    "genero": [
-      "Animação"
-    ],
-    "duracao": "1h 49m",
-    "descricao": "Sid encontra ovos de dinossauro e o grupo precisa descer a um mundo subterrâneo para resgatá-lo.",
-    "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQblZN3gLxFrMuR0h7fDWoyzm1r5YUHzJaaYg&s",
-    "banner": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcKsFFw5DZrF5BGo37sGeZpRvqJhEOMypfCMtD9xX16r3RQZT98fczEPgPPd4EENbQeEENHTwfv0Z9wcvGglZ17J-xjZbZFk_NwXFlId3_EqVTJ6UPgxIjjPdD0Fipo3k4yP5CPgMc6F0/w1200-h630-p-k-no-nu/A+Era+do+Gelo+3.jpg",
-    "link": "https://drive.google.com/file/d/1SDqRYt17-d5ITPCaA2-m921MnB9Ytlq7/view",
-    "destaque": false,
-    "popular": false,
-    "adicionado": "2026-08-08"
-  },
-  {
-    "id": 9,
+    "id": 17,
     "titulo": "Monstros S.A.",
     "ano": 2001,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 49m",
     "descricao": "A maior fábrica de sustos usa portais para os quartos das crianças, onde os monstros geram a energia de que a cidade precisa para sobreviver.",
     "capa": "",
@@ -302,12 +238,10 @@
     "adicionado": "2026-08-09"
   },
   {
-    "id": 10,
+    "id": 18,
     "titulo": "Como Treinar o Seu Dragão (Live)",
     "ano": 2010,
-    "genero": [
-      "Aventura"
-    ],
+    "genero": ["Aventura"],
     "duracao": "1h 38m",
     "descricao": "Um jovem guerreiro busca domar um dragão lendário em uma aventura emocionante.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSWUhU5cn1rlRUR1wJXGET7DmkiKaj7W_KccUrr8cS6zeWfYjzcVnKpW8Y&s=10",
@@ -318,12 +252,10 @@
     "adicionado": "2026-08-10"
   },
   {
-    "id": 11,
+    "id": 19,
     "titulo": "Ponte para Terabítia",
     "ano": 2007,
-    "genero": [
-      "Fantasia"
-    ],
+    "genero": ["Fantasia"],
     "duracao": "1h 35m",
     "descricao": "Dois amigos criam um mundo mágico que muda suas vidas para sempre.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwE04UdWSgjRtBMlcFQKwjHJ-duqlQd5QS_xq4BdRkAA&s=10",
@@ -334,12 +266,10 @@
     "adicionado": "2026-08-11"
   },
   {
-    "id": 12,
+    "id": 20,
     "titulo": "Barbie: A Princesa e a Popstar",
     "ano": 2012,
-    "genero": [
-      "Infantil"
-    ],
+    "genero": ["Infantil"],
     "duracao": "1h 26m",
     "descricao": "Barbie vive uma aventura musical onde troca de lugar com uma popstar.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFKjgSviyJjWvIlHuPAE6Pq0n4oaJaxfGxeh4GItDIGQ&s=10",
@@ -350,12 +280,10 @@
     "adicionado": "2026-08-12"
   },
   {
-    "id": 13,
+    "id": 21,
     "titulo": "Barbie: Escola de Princesas",
     "ano": 2011,
-    "genero": [
-      "Infantil"
-    ],
+    "genero": ["Infantil"],
     "duracao": "1h 21m",
     "descricao": "Barbie entra em uma escola especial onde aprende a se tornar princesa.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSv6iUELHn4hZsJVuRxFq6S5wWV4RerafkoNkILeg&s=10",
@@ -366,12 +294,10 @@
     "adicionado": "2026-08-13"
   },
   {
-    "id": 14,
+    "id": 22,
     "titulo": "A Princesa e o Sapo",
     "ano": 2009,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 37m",
     "descricao": "Tiana embarca em uma jornada mágica após um feitiço transformar um príncipe em sapo.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeLjD1QfkLcVsJunTWX3juX6-GOreYn3LyzmWzjcJOtA&s",
@@ -382,12 +308,10 @@
     "adicionado": "2026-08-14"
   },
   {
-    "id": 15,
+    "id": 23,
     "titulo": "Shrek Para Sempre (Shrek 4)",
     "ano": 2010,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 33m",
     "descricao": "Shrek entra em uma realidade alternativa e precisa recuperar sua vida.",
     "capa": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSXViRZX628FiyXvqFguo2czrDD92jNb5YuaHnrAd7OlnCzVjxIiVQUXd7spsftf2QvOX5dRngKWNEB8mcKJ5xTxbIdkWvHXHjQUD9d_Pk",
@@ -398,12 +322,10 @@
     "adicionado": "2026-08-15"
   },
   {
-    "id": 16,
+    "id": 24,
     "titulo": "Pânico",
     "ano": 1996,
-    "genero": [
-      "Terror"
-    ],
+    "genero": ["Terror"],
     "duracao": "1h 51m",
     "descricao": "Um assassino mascarado aterroriza uma pequena cidade.",
     "capa": "https://play-lh.googleusercontent.com/8b0izQwxU79gMpvcdSHqjcYlAmaTXgTL-rXrijHkeYfYEnQbmdj0pKOOUj3mqc3u8eE",
@@ -414,12 +336,10 @@
     "adicionado": "2026-08-16"
   },
   {
-    "id": 17,
+    "id": 25,
     "titulo": "Pânico 2",
     "ano": 1997,
-    "genero": [
-      "Terror"
-    ],
+    "genero": ["Terror"],
     "duracao": "2h 00m",
     "descricao": "A carnificina continua quando um novo assassino surge no campus universitário.",
     "capa": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTk25PVtpQYO4F63We8P1nEsTl8LuRpo2Kf_8BWA63m_27AP-T3tcga2C-l0DktvhYJyQiCYIrrYA8xez9z0a_KrUeW_dWHrLU_5bKuwo0",
@@ -430,12 +350,10 @@
     "adicionado": "2026-08-17"
   },
   {
-    "id": 18,
+    "id": 26,
     "titulo": "Pânico 4",
     "ano": 2011,
-    "genero": [
-      "Terror"
-    ],
+    "genero": ["Terror"],
     "duracao": "1h 51m",
     "descricao": "Ghostface retorna anos depois com novas regras e vítimas.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmdgPNeSgF6zvLATdv2p-hrF4zThwBmG8c_XdGIvb_OCUs3W_tSgBPmOq1&s=10",
@@ -446,12 +364,10 @@
     "adicionado": "2026-08-18"
   },
   {
-    "id": 19,
+    "id": 27,
     "titulo": "A Cinco Passos de Você",
     "ano": 2019,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "1h 56m",
     "descricao": "Dois jovens com fibrose cística vivem um amor impossível devido à doença.",
     "capa": "https://m.media-amazon.com/images/I/81Q11TuUR3L.jpg",
@@ -462,12 +378,10 @@
     "adicionado": "2026-08-19"
   },
   {
-    "id": 20,
+    "id": 28,
     "titulo": "As Aventuras das Garotas de Beverly Hills",
     "ano": 1993,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 36m",
     "descricao": "Um grupo de meninas ricas vive aventuras malucas em Hollywood.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9lbluafX_xkj34rieGm4p2Keol1Daf3C244v3BIfDK6XgQVZoVko7XmlZKTY941zPJcguTjkXucrx9nnzWnjVu5YARPjlguAnp-pgA",
@@ -478,12 +392,10 @@
     "adicionado": "2026-08-20"
   },
   {
-    "id": 21,
+    "id": 29,
     "titulo": "Enrolados",
     "ano": 2010,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 40m",
     "descricao": "Rapunzel embarca em uma aventura com um ladrão para descobrir o mundo exterior.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQS5M4aaYxWkDmBdftC8ZTiarBbz2B57ZRSL1QzvcBRw-Ksd70SSfregbj&s=10",
@@ -494,12 +406,10 @@
     "adicionado": "2026-08-21"
   },
   {
-    "id": 22,
+    "id": 30,
     "titulo": "O Rei Leão",
     "ano": 1994,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 28m",
     "descricao": "Simba precisa assumir seu destino como rei da savana.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKfNHI-WBNS_FeoLiXcJY9cpPkoee2jV-a-g&usqp=CAU",
@@ -510,12 +420,10 @@
     "adicionado": "2026-08-22"
   },
   {
-    "id": 23,
+    "id": 31,
     "titulo": "Toy Story",
     "ano": 1995,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 21m",
     "descricao": "Woody e Buzz iniciam uma das maiores aventuras dos brinquedos.",
     "capa": "https://upload.wikimedia.org/wikipedia/pt/a/a7/Toy_Story_1995.jpg",
@@ -526,12 +434,10 @@
     "adicionado": "2026-08-23"
   },
   {
-    "id": 24,
+    "id": 32,
     "titulo": "Toy Story 2",
     "ano": 1999,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 32m",
     "descricao": "Woody é sequestrado e seus amigos embarcam em uma missão de resgate.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUW40Phj12I0xU-YZeX7RhKr0s2Jd2DDxfKg&usqp=CAU",
@@ -542,12 +448,10 @@
     "adicionado": "2026-08-24"
   },
   {
-    "id": 25,
+    "id": 33,
     "titulo": "Toy Story 3",
     "ano": 2010,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 43m",
     "descricao": "Os brinquedos enfrentam seu destino quando Andy cresce.",
     "capa": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSWc41N_IMKXB4lOwyBQPLAa8adcyCptBe_dxAv2iT29fCY1T7HXP-VFQg2Ej5HxZTugpHihof-irlGdelpuBGdYkqqme0I6KeSzGbrYro",
@@ -558,12 +462,10 @@
     "adicionado": "2026-08-25"
   },
   {
-    "id": 26,
+    "id": 34,
     "titulo": "Up: Altas Aventuras",
     "ano": 2009,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 36m",
     "descricao": "Um velhinho voa para a América do Sul usando balões presos à sua casa.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWydiBjlv2wEbxsH_KUhUXceSCgC9WYyV0FdkaEaJEw&s",
@@ -574,12 +476,10 @@
     "adicionado": "2026-08-26"
   },
   {
-    "id": 27,
+    "id": 35,
     "titulo": "Viagem ao Centro da Terra",
     "ano": 2008,
-    "genero": [
-      "Aventura"
-    ],
+    "genero": ["Aventura"],
     "duracao": "1h 33m",
     "descricao": "Um cientista e seu sobrinho descobrem um mundo subterrâneo cheio de perigos.",
     "capa": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRGs3cLTF6drMAFuB4wP5VoWhg-MoYzhxMkzK5Oym7eCO5l4xD2sdGmZy2d3mBB5NEuJ9F_nQjK9xZDQeavaNhUuOnn88KDxQpPbu0Nht0",
@@ -590,12 +490,10 @@
     "adicionado": "2026-08-27"
   },
   {
-    "id": 28,
+    "id": 36,
     "titulo": "Viagem 2: A Ilha Misteriosa",
     "ano": 2012,
-    "genero": [
-      "Aventura"
-    ],
+    "genero": ["Aventura"],
     "duracao": "1h 34m",
     "descricao": "Um grupo parte em busca de uma ilha cheia de segredos e criaturas fantásticas.",
     "capa": "https://images.justwatch.com/poster/322331474/s718/viagem-2.jpg",
@@ -606,12 +504,10 @@
     "adicionado": "2026-08-28"
   },
   {
-    "id": 29,
+    "id": 37,
     "titulo": "Vovó... Zona",
     "ano": 2000,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 38m",
     "descricao": "Um agente do FBI se disfarça de vovó para capturar um criminoso.",
     "capa": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRPZw1irUN2zmvWDsk7AiN2yAKX7L9GHhcnpkfOi9c1CzNl8XuHb0lmVhAnoIHYM9eXhemNF410M0DXwfTaGZ14ynPbt4nvJn25ahTOJao",
@@ -622,12 +518,10 @@
     "adicionado": "2026-08-29"
   },
   {
-    "id": 30,
+    "id": 38,
     "titulo": "Vovó... Zona 2",
     "ano": 2006,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 40m",
     "descricao": "O agente do FBI precisa voltar a vestir o disfarce de vovó para resolver um novo caso.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5w9srZvRKRdt_oyNMw7NgInJowKl_5fPR-w&usqp=CAU",
@@ -638,12 +532,10 @@
     "adicionado": "2026-08-30"
   },
   {
-    "id": 31,
+    "id": 39,
     "titulo": "Vovó... Zona 3",
     "ano": 2011,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 47m",
     "descricao": "O agente Malcolm e o enteado Trent se disfarçam em uma escola de artes para desvendar um crime.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCii9nzJ5kJueqfUHYKlYFEkpn8vpyHwx83OqSn-xOK9NN7pxjHPKQfbMRatfycLF8Zq9PJW8re29EFYzxARud36VH-Js6CNqt3_QNDes",
@@ -654,12 +546,10 @@
     "adicionado": "2026-08-31"
   },
   {
-    "id": 32,
+    "id": 40,
     "titulo": "Percy Jackson e o Ladrão de Raios",
     "ano": 2010,
-    "genero": [
-      "Fantasia"
-    ],
+    "genero": ["Fantasia"],
     "duracao": "1h 59m",
     "descricao": "Um jovem descobre ser filho de um deus grego e precisa impedir uma guerra entre os deuses.",
     "capa": "https://br.web.img2.acsta.net/pictures/210/168/21016896_20130701202610322.jpg",
@@ -670,12 +560,10 @@
     "adicionado": "2026-09-01"
   },
   {
-    "id": 33,
+    "id": 41,
     "titulo": "O Show de Truman",
     "ano": 1998,
-    "genero": [
-      "Drama"
-    ],
+    "genero": ["Drama"],
     "duracao": "1h 43m",
     "descricao": "Truman vive sem saber que toda sua vida é um reality show transmitido para o mundo.",
     "capa": "https://http2.mlstatic.com/D_NQ_NP_805068-MLA75683634056_042024-OO.jpg",
@@ -686,12 +574,10 @@
     "adicionado": "2026-09-02"
   },
   {
-    "id": 34,
+    "id": 42,
     "titulo": "Rio",
     "ano": 2011,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 36m",
     "descricao": "Blu, uma arara azul domesticada, viaja ao Brasil e vive uma grande aventura.",
     "capa": "https://play-lh.googleusercontent.com/3-Qy5gX79DWT8c6F_hiPuwP2J1HY9nsDk1habMNGqkX87ek6oR4U3_XaGm7XghlaAW8U=w240-h480-rw",
@@ -702,12 +588,10 @@
     "adicionado": "2026-09-03"
   },
   {
-    "id": 35,
+    "id": 43,
     "titulo": "Rio 2",
     "ano": 2014,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 41m",
     "descricao": "Blu e sua família viajam para a Amazônia e descobrem novas aventuras.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg6lHtdOveZ1OTeavjRjbBTE5EFdYisZ1suqHugTwopJDrrUHwMk8svfuF&s=10",
@@ -718,12 +602,10 @@
     "adicionado": "2026-09-04"
   },
   {
-    "id": 36,
+    "id": 44,
     "titulo": "Todo Mundo em Pânico",
     "ano": 2000,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 28m",
     "descricao": "Uma paródia hilária dos filmes de terror clássicos.",
     "capa": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTQqpvfwXIN0iX3M3a0PCiYMcNq0umnsh8Ou8aB75O17qPrksoHcxv111nJZrCSsuMiqNmjpsEhvgPEzRLnrqsacx_VzzHoWsnGZMrX_A",
@@ -734,12 +616,10 @@
     "adicionado": "2026-09-05"
   },
   {
-    "id": 37,
+    "id": 45,
     "titulo": "Todo Mundo em Pânico 2",
     "ano": 2001,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 23m",
     "descricao": "A turma volta para mais uma aventura cheia de sátiras.",
     "capa": "https://m.media-amazon.com/images/M/MV5BNTU3YzY0ZTItZTc5YS00Y2I3LTllNmQtMzA2NTI3MzRjNWNhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
@@ -750,12 +630,10 @@
     "adicionado": "2026-09-06"
   },
   {
-    "id": 38,
+    "id": 46,
     "titulo": "Todo Mundo em Pânico 3",
     "ano": 2003,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 25m",
     "descricao": "Agora as paródias envolvem alienígenas, fantasmas e muita loucura.",
     "capa": "https://http2.mlstatic.com/D_NQ_NP_761070-MLA80251735178_112024-OO.jpg",
@@ -766,12 +644,10 @@
     "adicionado": "2026-09-07"
   },
   {
-    "id": 39,
+    "id": 47,
     "titulo": "Todo Mundo em Pânico 4",
     "ano": 2006,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 23m",
     "descricao": "Novo capítulo com sátiras de Jogos Mortais e Guerra dos Mundos.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlpOvVvIMGdYMdGklJ-SVq8gLzDD9RX0QYtrBobr-KhrJzF4K2a9yA8uBJ&s=10",
@@ -782,12 +658,10 @@
     "adicionado": "2026-09-08"
   },
   {
-    "id": 40,
+    "id": 48,
     "titulo": "Todo Mundo em Pânico 5",
     "ano": 2013,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 26m",
     "descricao": "A franquia volta satirizando filmes de terror recentes.",
     "capa": "https://br.web.img2.acsta.net/c_310_420/pictures/210/061/21006150_20130515172540045.jpg",
@@ -798,12 +672,10 @@
     "adicionado": "2026-09-09"
   },
   {
-    "id": 41,
+    "id": 49,
     "titulo": "Como Treinar Seu Dragão",
     "ano": 2010,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 38m",
     "descricao": "Soluço cria amizade com um dragão e muda a relação dos vikings com as criaturas.",
     "capa": "https://images.justwatch.com/poster/240890306/s718/como-treinar-o-seu-dragao.jpg",
@@ -814,12 +686,10 @@
     "adicionado": "2026-09-10"
   },
   {
-    "id": 42,
+    "id": 50,
     "titulo": "Como Treinar Seu Dragão 2",
     "ano": 2014,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 42m",
     "descricao": "Soluço descobre novos dragões e enfrenta um poderoso inimigo.",
     "capa": "https://play-lh.googleusercontent.com/1r9pjEP2W5IEBNZ54m5ppGlpj-YE7quFCHMNtHsYJtiPTnU2uSMguEk6Dm59EdsCL7Th=w240-h480-rw",
@@ -830,12 +700,10 @@
     "adicionado": "2026-09-11"
   },
   {
-    "id": 43,
+    "id": 51,
     "titulo": "Como Treinar Seu Dragão 3",
     "ano": 2019,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 44m",
     "descricao": "Soluço precisa proteger os dragões enquanto descobre seu destino final.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUdvHCk4gc86wOlDSK2gyP2D0WGmS3I3Joc9uId5zncVl-ITxdmIEmRc4&s=10",
@@ -846,12 +714,10 @@
     "adicionado": "2026-09-12"
   },
   {
-    "id": 44,
+    "id": 52,
     "titulo": "Norbit",
     "ano": 2007,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 42m",
     "descricao": "Um homem enfrenta a esposa controladora enquanto reencontra um amor do passado.",
     "capa": "https://cdn.imago-images.de/bild/st/0094692266/s.jpg",
@@ -862,12 +728,10 @@
     "adicionado": "2026-09-13"
   },
   {
-    "id": 45,
+    "id": 53,
     "titulo": "Bolt",
     "ano": 2008,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 35m",
     "descricao": "Bolt é um cachorro que acredita ter superpoderes e parte para resgatar sua dona.",
     "capa": "https://br.web.img2.acsta.net/medias/nmedia/18/87/76/98/19961364.jpg",
@@ -878,12 +742,10 @@
     "adicionado": "2026-09-14"
   },
   {
-    "id": 46,
+    "id": 54,
     "titulo": "Ratatouille",
     "ano": 2007,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 51m",
     "descricao": "Remy, um rato com talento para culinária, sonha em se tornar chef em Paris.",
     "capa": "https://m.media-amazon.com/images/I/71u6G9GjxBL._UF894,1000_QL80_.jpg",
@@ -894,12 +756,10 @@
     "adicionado": "2026-09-15"
   },
   {
-    "id": 47,
+    "id": 55,
     "titulo": "Lilo & Stitch",
     "ano": 2002,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 25m",
     "descricao": "Lilo adota Stitch, um experimento alienígena fugitivo.",
     "capa": "https://br.web.img2.acsta.net/medias/nmedia/18/90/89/85/20119071.jpg",
@@ -910,12 +770,10 @@
     "adicionado": "2026-09-16"
   },
   {
-    "id": 48,
+    "id": 56,
     "titulo": "Homem de Ferro",
     "ano": 2008,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 06m",
     "descricao": "Tony Stark cria sua armadura e se torna o Homem de Ferro.",
     "capa": "https://m.media-amazon.com/images/I/81vTHovrz+L._UF894,1000_QL80_.jpg",
@@ -926,12 +784,10 @@
     "adicionado": "2026-09-17"
   },
   {
-    "id": 49,
+    "id": 57,
     "titulo": "Homem de Ferro 2",
     "ano": 2010,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 04m",
     "descricao": "Tony enfrenta novos inimigos enquanto seu reator o envenena.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjY26hcnTtYl9-utfgH_xD2YcXvULlD-s99UKbZPj6Sg&s=10",
@@ -942,12 +798,10 @@
     "adicionado": "2026-09-18"
   },
   {
-    "id": 50,
+    "id": 58,
     "titulo": "Homem de Ferro 3",
     "ano": 2013,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 10m",
     "descricao": "Tony enfrenta o Mandarim enquanto lida com traumas pessoais.",
     "capa": "https://m.media-amazon.com/images/M/MV5BOTA3NmU3YTMtYjE2YS00NWNkLTg3ZWQtOGNiNjZiZTViNDRkXkEyXkFqcGc@._V1_.jpg",
@@ -958,12 +812,10 @@
     "adicionado": "2026-09-19"
   },
   {
-    "id": 51,
+    "id": 59,
     "titulo": "A Ligação",
     "ano": 2020,
-    "genero": [
-      "Suspense"
-    ],
+    "genero": ["Suspense"],
     "duracao": "1h 52m",
     "descricao": "Uma mulher fala ao telefone com alguém vivendo no passado, e isso muda tudo.",
     "capa": "https://m.media-amazon.com/images/M/MV5BYzZlOGEyZTMtYmIxYS00NmIxLWIwNjYtMzY3Yjg2OThjODU2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
@@ -974,12 +826,10 @@
     "adicionado": "2026-09-20"
   },
   {
-    "id": 52,
+    "id": 60,
     "titulo": "A Noiva Cadáver",
     "ano": 2005,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 17m",
     "descricao": "Um jovem coloca um anel no dedo de uma morta sem querer, e ela retorna à vida.",
     "capa": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRwidwOb2qWxPHr-EDjTONf5njaNs7UhtcwCYp61zdgBI5O-6TNS3HhyhNhzHm78l0TGX-onIuFEFxqk8WcC0M3mmOfAxIU_5KG5dPEopY",
@@ -990,12 +840,10 @@
     "adicionado": "2026-09-21"
   },
   {
-    "id": 53,
+    "id": 61,
     "titulo": "Garota Infernal",
     "ano": 2009,
-    "genero": [
-      "Terror"
-    ],
+    "genero": ["Terror"],
     "duracao": "1h 42m",
     "descricao": "Uma líder de torcida possuída transforma-se em uma assassina.",
     "capa": "https://br.web.img3.acsta.net/medias/nmedia/18/87/30/75/19874147.jpg",
@@ -1006,12 +854,10 @@
     "adicionado": "2026-09-22"
   },
   {
-    "id": 54,
+    "id": 62,
     "titulo": "O Diabo Veste Prada",
     "ano": 2006,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 49m",
     "descricao": "Jovem jornalista começa a trabalhar para uma das chefes mais temidas da moda.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCdCsDBHeEuRP4fWb7TEM_Pg2ZNdTkANEPaQ&usqp=CAU",
@@ -1022,12 +868,10 @@
     "adicionado": "2026-09-23"
   },
   {
-    "id": 55,
+    "id": 63,
     "titulo": "Cisne Negro",
     "ano": 2010,
-    "genero": [
-      "Drama"
-    ],
+    "genero": ["Drama"],
     "duracao": "1h 48m",
     "descricao": "Uma bailarina entra em colapso psicológico enquanto busca a perfeição.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaZ0dhdYr65xjEVuSk_90pks7wMuLoY63mxSiayhLc1d1oXp5FbZecLun-lkKXnjVr1R2cAOYxJrfOI1nO75r9UC5cRGIIOfylaabMg",
@@ -1038,12 +882,10 @@
     "adicionado": "2026-09-24"
   },
   {
-    "id": 56,
+    "id": 64,
     "titulo": "3096 Dias de Cativeiro",
     "ano": 2013,
-    "genero": [
-      "Drama"
-    ],
+    "genero": ["Drama"],
     "duracao": "1h 51m",
     "descricao": "A história real de Natascha Kampusch, sequestrada e mantida presa por anos.",
     "capa": "https://m.media-amazon.com/images/M/MV5BMjE2NjI0ZDUtNWZhMy00OWMxLTllMzAtZWZlM2Q4YmEyNGIxXkEyXkFqcGc@._V1_QL75_UY281_CR4,0,190,281_.jpg",
@@ -1054,12 +896,10 @@
     "adicionado": "2026-09-25"
   },
   {
-    "id": 57,
+    "id": 65,
     "titulo": "O Exorcismo de Emily Rose",
     "ano": 2005,
-    "genero": [
-      "Terror"
-    ],
+    "genero": ["Terror"],
     "duracao": "1h 59m",
     "descricao": "Um padre é julgado após realizar um exorcismo que termina em tragédia.",
     "capa": "https://m.media-amazon.com/images/M/MV5BMTA5YjllYTAtOTU1Ni00YzAxLWJkZTUtYmQxOTM1YWM0YjcxXkEyXkFqcGc@._V1_.jpg",
@@ -1070,12 +910,10 @@
     "adicionado": "2026-09-26"
   },
   {
-    "id": 58,
+    "id": 66,
     "titulo": "Corra!",
     "ano": 2017,
-    "genero": [
-      "Suspense"
-    ],
+    "genero": ["Suspense"],
     "duracao": "1h 44m",
     "descricao": "Um jovem descobre segredos perturbadores ao visitar a família da namorada.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQGvM68tYzqfwFNiQuv1sdGMlFAsVCTCilAQ&usqp=CAU",
@@ -1086,12 +924,10 @@
     "adicionado": "2026-09-27"
   },
   {
-    "id": 59,
+    "id": 67,
     "titulo": "Vingadores: Guerra Infinita",
     "ano": 2018,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 29m",
     "descricao": "Thanos chega para coletar as Joias do Infinito e os Vingadores precisam impedir que ele elimine metade do universo.",
     "capa": "https://loggado.com/wp-content/uploads/2018/04/guerra-infinita.jpg",
@@ -1102,12 +938,10 @@
     "adicionado": "2026-09-28"
   },
   {
-    "id": 60,
+    "id": 68,
     "titulo": "Vingadores: Ultimato",
     "ano": 2019,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "3h 01m",
     "descricao": "Os heróis restantes tentam desfazer o estalo de Thanos em uma batalha final épica.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqI3llE3DO6ulreBPW_uUcRJiJhkkvykGz_OCb74txhQ&s=10",
@@ -1118,12 +952,10 @@
     "adicionado": "2026-09-29"
   },
   {
-    "id": 61,
+    "id": 69,
     "titulo": "Ted",
     "ano": 2012,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 46m",
     "descricao": "Um ursinho de pelúcia ganha vida e cresce junto com seu melhor amigo humano, causando confusões adultas.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBj0Eg94wTqyMcX3uMt3Y9yMVVpJFZ1dIVoeplqImf9A&s=10",
@@ -1134,12 +966,10 @@
     "adicionado": "2026-09-30"
   },
   {
-    "id": 62,
+    "id": 70,
     "titulo": "Ted 2",
     "ano": 2015,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 55m",
     "descricao": "Ted luta na justiça para provar que é uma pessoa e ter direito de formar uma família.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4AGAHkHVIH-Gdvqhz6Cr5FVwAb1_NQtBIAcv6SDEvlg&s=10",
@@ -1150,12 +980,10 @@
     "adicionado": "2026-10-01"
   },
   {
-    "id": 63,
+    "id": 71,
     "titulo": "Venom",
     "ano": 2018,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "1h 52m",
     "descricao": "O jornalista Eddie Brock se torna hospedeiro de um simbionte alienígena com habilidades extraordinárias.",
     "capa": "https://www.sonypictures.com.br/sites/brazil/files/2021-11/KEY%20ART.JPG",
@@ -1166,12 +994,10 @@
     "adicionado": "2026-10-02"
   },
   {
-    "id": 64,
+    "id": 72,
     "titulo": "Todo Poderoso",
     "ano": 2003,
-    "genero": [
-      "Comédia"
-    ],
+    "genero": ["Comédia"],
     "duracao": "1h 41m",
     "descricao": "Um homem insatisfeito recebe poderes divinos temporariamente e causa inúmeras confusões.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO-WqF4BwWN1A6RdWfrhigvartp43edGSt4ne3AIF4KA&s",
@@ -1182,12 +1008,10 @@
     "adicionado": "2026-10-03"
   },
   {
-    "id": 65,
+    "id": 73,
     "titulo": "10 Coisas que Eu Odeio em Você",
     "ano": 1999,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "1h 37m",
     "descricao": "Um romance adolescente divertido onde um jovem precisa fazer uma garota difícil se apaixonar.",
     "capa": "https://br.web.img3.acsta.net/medias/nmedia/18/90/67/52/20107757.jpg",
@@ -1198,12 +1022,10 @@
     "adicionado": "2026-10-04"
   },
   {
-    "id": 66,
+    "id": 74,
     "titulo": "Crepúsculo",
     "ano": 2008,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "2h 02m",
     "descricao": "Bella Swan se apaixona pelo vampiro Edward Cullen, iniciando uma história proibida.",
     "capa": "https://m.media-amazon.com/images/I/817k8+2zzaL._AC_UF1000,1000_QL80_.jpg",
@@ -1214,12 +1036,10 @@
     "adicionado": "2026-10-05"
   },
   {
-    "id": 67,
+    "id": 75,
     "titulo": "Lua Nova",
     "ano": 2009,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "2h 11m",
     "descricao": "Após Edward se afastar, Bella se aproxima de Jacob, descobrindo segredos perigosos.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsrARqA9cr_XTWkWEQpf2zLrahd2yzxaGk9eOa-diOIw&s=10",
@@ -1230,12 +1050,10 @@
     "adicionado": "2026-10-06"
   },
   {
-    "id": 68,
+    "id": 76,
     "titulo": "Eclipse",
     "ano": 2010,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "2h 04m",
     "descricao": "Bella precisa escolher entre seu amor por Edward e sua amizade com Jacob enquanto uma ameaça cresce.",
     "capa": "https://play-lh.googleusercontent.com/9fcTIfkX8irfFtIdUqCU6_sE4gaDeIi-ZW96Gd--nb2Q5gs4tizbbphMLxaAv2_Mg8E",
@@ -1246,12 +1064,10 @@
     "adicionado": "2026-10-07"
   },
   {
-    "id": 69,
+    "id": 77,
     "titulo": "Amanhecer - Parte 1",
     "ano": 2011,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "1h 57m",
     "descricao": "O casamento de Bella e Edward desencadeia eventos perigosos envolvendo seu futuro.",
     "capa": "https://m.media-amazon.com/images/S/pv-target-images/482953226cb3abce8c510a7bd98f9f852a87d3e5e49093a38c9c7106c90c0724.jpg",
@@ -1262,12 +1078,10 @@
     "adicionado": "2026-10-08"
   },
   {
-    "id": 70,
+    "id": 78,
     "titulo": "Amanhecer - Parte 2",
     "ano": 2012,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "1h 55m",
     "descricao": "Bella agora é vampira e precisa proteger sua filha de uma ameaça mortal dos Volturi.",
     "capa": "https://m.media-amazon.com/images/S/pv-target-images/d32ff2af0bc6508f169c7baa6a1c6911e1bec390d759f3b9ea349aca5e165c3f.jpg",
@@ -1278,12 +1092,10 @@
     "adicionado": "2026-10-09"
   },
   {
-    "id": 71,
+    "id": 79,
     "titulo": "Wolverine Imortal",
     "ano": 2013,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 06m",
     "descricao": "Logan viaja ao Japão e enfrenta inimigos enquanto luta com sua própria imortalidade.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ0AZyjVZX2BAukvrQJsXIBeKkJU6NnPA-Pg&s",
@@ -1294,12 +1106,10 @@
     "adicionado": "2026-10-10"
   },
   {
-    "id": 72,
+    "id": 80,
     "titulo": "Valente",
     "ano": 2012,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 33m",
     "descricao": "A princesa Merida luta para mudar seu destino e desfazer uma antiga maldição.",
     "capa": "https://m.media-amazon.com/images/I/71pFedOzRDL._SY425_.jpg",
@@ -1310,12 +1120,10 @@
     "adicionado": "2026-10-11"
   },
   {
-    "id": 73,
+    "id": 81,
     "titulo": "Robô Selvagem",
     "ano": 2024,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 42m",
     "descricao": "Uma robô tenta sobreviver em uma ilha repleta de desafios desconhecidos.",
     "capa": "https://ingresso-a.akamaihd.net/prd/img/movie/robo-selvagem/b95bdd07-47ad-46d4-801a-017be432b849.webp",
@@ -1326,12 +1134,10 @@
     "adicionado": "2026-10-12"
   },
   {
-    "id": 74,
+    "id": 82,
     "titulo": "Motoqueiro Fantasma",
     "ano": 2007,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "1h 50m",
     "descricao": "Johnny Blaze faz um pacto e se torna o Motoqueiro Fantasma, caçando forças malignas.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8dtjLoGmofkvzl6jSDp9muvf8KCN4df6xb-JATkKCdw&s=10",
@@ -1342,12 +1148,10 @@
     "adicionado": "2026-10-13"
   },
   {
-    "id": 75,
+    "id": 83,
     "titulo": "Guardiões da Galáxia",
     "ano": 2014,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 01m",
     "descricao": "Um grupo improvável de heróis precisa salvar o universo de uma ameaça poderosa.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShiMLPJqyxO8CvIB5PhLA1U4CgsIehmXPriWIKKy5NJg&s=10",
@@ -1358,12 +1162,10 @@
     "adicionado": "2026-10-14"
   },
   {
-    "id": 76,
+    "id": 84,
     "titulo": "Guardiões da Galáxia Vol. 2",
     "ano": 2017,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "2h 16m",
     "descricao": "Os Guardiões enfrentam novos desafios enquanto descobrem verdades sobre o passado de Peter Quill.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_EEQ_ZJpYgZlbPQEuE-J46vRO_JPqtZl5oFpKw_CbEg&s=10",
@@ -1374,12 +1176,10 @@
     "adicionado": "2026-10-15"
   },
   {
-    "id": 77,
+    "id": 85,
     "titulo": "Detona Ralph",
     "ano": 2012,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 41m",
     "descricao": "Ralph, cansado de ser vilão, decide provar que pode ser um herói, causando caos nos videogames.",
     "capa": "img/20251119_101053.jpg",
@@ -1390,12 +1190,10 @@
     "adicionado": "2026-10-16"
   },
   {
-    "id": 78,
+    "id": 86,
     "titulo": "Minecraft: O Filme",
     "ano": 2025,
-    "genero": [
-      "Ação"
-    ],
+    "genero": ["Ação"],
     "duracao": "1h 41m",
     "descricao": "Um jovem aventureiro descobre um artefato capaz de alterar o mundo e precisa impedir que ele caia em mãos perigosas, embarcando numa jornada cheia de ação e mistérios.",
     "capa": "https://br.web.img3.acsta.net/img/ec/9e/ec9ec53e8a23b4f934bcb0ae2b4ee0b1.jpg",
@@ -1406,14 +1204,12 @@
     "adicionado": "2026-10-17"
   },
   {
-    "id": 79,
+    "id": 87,
     "titulo": "A Origem dos Guardiões",
     "ano": 2012,
-    "genero": [
-      "Infantil"
-    ],
+    "genero": ["Infantil"],
     "duracao": "1h 37m",
-    "descricao": "Papai Noel, Coelho da Páscoa, Fada dos Dentes e Sandman se unem a Jack Frost para proteger as crianças do mundo contra o sombrio Bicho-Papão.",
+    "descricao": "Papai Noel, Coelho da Páscoa, Fada dos Dentes e Sandman se unem a Jack Frost para proteger las crianças do mundo contra o sombrio Bicho-Papão.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2itud3cm8J50PvsJb1P42wCll0COl7VDRwds9LXEN2w&s=10",
     "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh24czydEXNzUVQiqAv-cSIyjyo0_-mh47Kh9cPrAB_A&s=10",
     "link": "https://drive.google.com/file/d/1km5xx3H1ERsjkNVvAw_AU30rWNSnYBj-/view",
@@ -1422,12 +1218,10 @@
     "adicionado": "2026-10-18"
   },
   {
-    "id": 80,
+    "id": 88,
     "titulo": "WiFi Ralph: Quebrando a Internet",
     "ano": 2018,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 37m",
     "descricao": "Ralph e Vanellope viajam para a internet em busca de uma peça para salvar o videogame Corrida Doce, contando com a ajuda dos cidadãos da web e de Yess, a alma do Buzzztube.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgN2mFFDgDic8oGCc3idWwZNtROVT8y92vA3a0F8X8w&s=10",
@@ -1438,12 +1232,10 @@
     "adicionado": "2026-10-19"
   },
   {
-    "id": 81,
+    "id": 89,
     "titulo": "Luca",
     "ano": 2021,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 35m",
     "descricao": "Luca vive aventuras com seu novo melhor amigo, mas a diversão é ameaçada por um segredo: seu amigo é um monstro marinho de outro mundo.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6dTdHX45gmH-W3bFaebx3qAHaHABBmYOPww&usqp=CAU",
@@ -1454,12 +1246,10 @@
     "adicionado": "2026-10-20"
   },
   {
-    "id": 82,
+    "id": 90,
     "titulo": "Toy Story 4",
     "ano": 2019,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 40m",
     "descricao": "Woody, Buzz e seus amigos embarcam em uma nova aventura quando Bonnie cria um novo brinquedo chamado Garfinho. Durante a jornada, Woody reencontra uma antiga amiga e descobre um novo propósito.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH_z8lXFrB9iJDpuSPHiz-PT9yLfeEkJ5EMlFjz-FgY60G-f3zX4FY3ctf2GxmkbU2rsQBVvBAr9pt1_5CAnDX2oWWe9nFA7-R768vo3M&s=10",
@@ -1470,12 +1260,10 @@
     "adicionado": "2026-10-21"
   },
   {
-    "id": 83,
+    "id": 91,
     "titulo": "Pets 2 – A Vida Secreta dos Bichos 2",
     "ano": 2019,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 26m",
     "descricao": "Max enfrenta grandes mudanças quando sua dona se casa e tem um bebê, enquanto seus amigos vivem novas aventuras, incluindo o resgate de um tigre branco de um circo.",
     "capa": "https://images.pathe-thuis.nl/19361_450x640.jpg",
@@ -1486,12 +1274,10 @@
     "adicionado": "2026-10-22"
   },
   {
-    "id": 84,
+    "id": 92,
     "titulo": "Viva – A Vida é uma Festa",
     "ano": 2017,
-    "genero": [
-      "Animação"
-    ],
+    "genero": ["Animação"],
     "duracao": "1h 45m",
     "descricao": "Miguel sonha em ser músico, mas sua família proíbe a música. Em busca do sonho, ele vai parar na Terra dos Mortos, onde descobre a verdadeira história de seus antepassados.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4kuKfgtrrDskRsJWDbDC0Vjd7Phvwjeb5w1HxxElzig&s=10",
@@ -1502,12 +1288,10 @@
     "adicionado": "2026-10-23"
   },
   {
-    "id": 85,
+    "id": 93,
     "titulo": "A Empregada",
     "ano": 2025,
-    "genero": [
-      "Suspense"
-    ],
+    "genero": ["Suspense"],
     "duracao": "2h 13m",
     "descricao": "Millie Calloway, uma jovem com um passado problemático, precisa de um recomeço e é contratada como empregada doméstica pelos Winchester, uma família rica que vive em uma mansão luxuosa.",
     "capa": "https://ingresso-a.akamaihd.net/prd/img/movie/a-empregada/4e37e5ca-5b88-4eee-8bee-07842a605e2f.webp",
@@ -1518,12 +1302,10 @@
     "adicionado": "2026-10-24"
   },
   {
-    "id": 86,
+    "id": 94,
     "titulo": "Se Não Fosse Você",
     "ano": 2025,
-    "genero": [
-      "Romance"
-    ],
+    "genero": ["Romance"],
     "duracao": "1h 56m",
     "descricao": "Um acidente devastador revela uma traição chocante. Morgan Grant e sua filha, Clara, exploram o que restou enquanto confrontam segredos de família e se redescobrem.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvI_CRquVBxMsOIy5jh0tUPLrvU5X1fdsNhlDo-RllqQ&s=10",
@@ -1534,12 +1316,10 @@
     "adicionado": "2026-10-25"
   },
   {
-    "id": 87,
+    "id": 95,
     "titulo": "O Pequeno Príncipe",
     "ano": 2015,
-    "genero": [
-      "Infantil"
-    ],
+    "genero": ["Infantil"],
     "duracao": "1h 48m",
     "descricao": "Uma menina descobre a aventura do Pequeno Príncipe e aprende sobre amizade e imaginação.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiRGEIZ58N-xinxKtg2alST5GHyaZrgbmHcqPM3WFL8aFYYQ-fSegJhyc&s=10",
@@ -1550,12 +1330,10 @@
     "adicionado": "2026-10-26"
   },
   {
-    "id": 88,
+    "id": 96,
     "titulo": "Entrevista com Deus",
     "ano": 2018,
-    "genero": [
-      "Drama"
-    ],
+    "genero": ["Drama"],
     "duracao": "1h 37m",
     "descricao": "Um jornalista aceita entrevistar um homem que diz ser Deus, iniciando uma conversa profunda sobre fé, vida e escolhas.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIVKaY_eAXx0wsjayHLm1U0frIPXAFAES9lwsELsl5Ww&s=10",
@@ -1566,12 +1344,10 @@
     "adicionado": "2026-10-27"
   },
   {
-    "id": 89,
+    "id": 97,
     "titulo": "Star Wars: Episódio I – A Ameaça Fantasma",
     "ano": 1999,
-    "genero": [
-      "Ficção científica"
-    ],
+    "genero": ["Ficção científica"],
     "duracao": "2h 16m",
     "descricao": "Obi-Wan e seu mentor tentam salvar um planeta das garras de Darth Sidious e conhecem um habilidoso menino que decidem treinar para ser Jedi.",
     "capa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERUSo1l_UU8c845gDBGIEisnmgO8zMwUTLPKkBPQDReyCqyq52-r1g0bHK8uRyxQGgxQQlOPqiueXu5IbBDvSyOFQ1ZGRECH350udWw&s=10",
@@ -1582,12 +1358,10 @@
     "adicionado": "2026-10-28"
   },
   {
-    "id": 90,
+    "id": 98,
     "titulo": "Star Wars: Episódio III – A Vingança dos Sith",
     "ano": 2005,
-    "genero": [
-      "Ficção científica"
-    ],
+    "genero": ["Ficção científica"],
     "duracao": "2h 20m",
     "descricao": "Em meio às Guerras Clônicas, Anakin Skywalker é seduzido por promessas de poder e se aproxima de Darth Sidious até se tornar Darth Vader.",
     "capa": "https://m.media-amazon.com/images/S/pv-target-images/cae9438a7952ffbbb4608c4b72020ce8d053875a70376adf88accb8ecedd9040.jpg",
@@ -1598,7 +1372,7 @@
     "adicionado": "2026-10-29"
   },
   {
-    "id": 91,
+    "id": 99,
     "titulo": "Oppenheimer",
     "ano": 2023,
     "genero": ["Drama", "História", "Biografia"],
@@ -1612,7 +1386,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 92,
+    "id": 100,
     "titulo": "Tenet",
     "ano": 2020,
     "genero": ["Ação", "Ficção Científica", "Suspense"],
@@ -1626,7 +1400,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 93,
+    "id": 101,
     "titulo": "Dunkirk",
     "ano": 2017,
     "genero": ["Guerra", "Drama", "História"],
@@ -1640,7 +1414,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 94,
+    "id": 102,
     "titulo": "Interestelar",
     "ano": 2014,
     "genero": ["Ficção Científica", "Drama", "Aventura"],
@@ -1654,7 +1428,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 95,
+    "id": 103,
     "titulo": "Batman: O Cavaleiro das Trevas Ressurge",
     "ano": 2012,
     "genero": ["Ação", "Aventura", "Drama"],
@@ -1668,7 +1442,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 96,
+    "id": 104,
     "titulo": "A Origem",
     "ano": 2010,
     "genero": ["Ficção Científica", "Ação", "Suspense"],
@@ -1682,7 +1456,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 97,
+    "id": 105,
     "titulo": "Batman: O Cavaleiro das Trevas",
     "ano": 2008,
     "genero": ["Ação", "Crime", "Drama"],
@@ -1696,7 +1470,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 98,
+    "id": 106,
     "titulo": "O Grande Truque",
     "ano": 2006,
     "genero": ["Drama", "Mistério", "Suspense"],
@@ -1710,7 +1484,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 99,
+    "id": 107,
     "titulo": "Batman Begins",
     "ano": 2005,
     "genero": ["Ação", "Aventura", "Crime"],
@@ -1724,7 +1498,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 100,
+    "id": 108,
     "titulo": "Insônia",
     "ano": 2002,
     "genero": ["Suspense", "Crime", "Drama"],
@@ -1738,7 +1512,7 @@
     "adicionado": "2026-10-30"
   },
   {
-    "id": 101,
+    "id": 109,
     "titulo": "Amnésia",
     "ano": 2000,
     "genero": ["Suspense", "Mistério", "Drama"],
