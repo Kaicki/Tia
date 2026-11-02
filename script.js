@@ -236,6 +236,17 @@ function abrirInfo(key) {
 function fecharInfo() { $('#modal').hidden = true; if ($('#player').hidden) document.body.classList.remove('travado'); }
 
 const temporadasDe = i => (i.temporadas || []).filter(t => t.episodios && t.episodios.length);
+function sugestoesPara(item) {
+  const mesmoGenero = state.itens.filter(x => x.key !== item.key &&
+    x.generos.some(g => item.generos.includes(g)));
+  const populares = state.itens.filter(x => x.key !== item.key && x.popular);
+  const recentes = [...state.itens].filter(x => x.key !== item.key)
+    .sort((a, b) => String(b.adicionado || '').localeCompare(String(a.adicionado || '')));
+  const unicos = new Map();
+  [...mesmoGenero, ...populares, ...recentes].forEach(x => { if (!unicos.has(x.key)) unicos.set(x.key, x); });
+  return [...unicos.values()].slice(0, 12);
+}
+
 function abrirPlayer(key, t = 0, e = 0) {
   const i = achar(key); if (!i) return;
   const temps = temporadasDe(i);
@@ -245,16 +256,22 @@ function abrirPlayer(key, t = 0, e = 0) {
   fecharInfo();
   state.pk = key; state.pt = t; state.pe = e;
   $('#playerTitulo').textContent = i.titulo + (temps.length ? ` · T${temps[t].temporada} E${e + 1}` : '');
-  $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer"></iframe>`;
-  let html = `<h2>${esc(i.titulo)}</h2><div class="meta">${i.ano || ''} · ${esc(i.generos.join(', '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div><p>${esc(i.descricao)}</p>`;
+  $('#videoWrap').innerHTML = `<iframe src="${esc(driveEmbed(link))}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="no-referrer" title="${esc(i.titulo)}"></iframe>`;
+  const fav = state.favs.has(key);
+  let html = `<div class="player-heading"><div><span class="player-kicker">${i.tipo === 'serie' ? 'SÉRIE' : 'FILME'}</span><h2>${esc(i.titulo)}</h2></div>
+    <button class="btn btn-sec btn-fav ${fav ? 'on' : ''}" data-favm="${esc(key)}">${fav ? '♥ Na minha lista' : '＋ Minha lista'}</button></div>
+    <div class="meta player-meta">${i.ano || ''} · ${esc(i.generos.join(' · '))}${i.duracao ? ' · ' + esc(i.duracao) : ''}</div>
+    <p class="player-descricao">${esc(i.descricao)}</p>`;
   if (temps.length) {
     const ultimo = t === temps.length - 1 && e === temps[t].episodios.length - 1;
     html += `<div class="eps">
-      <select id="selTemp" aria-label="Temporada">${temps.map((x, n) => `<option value="${n}" ${n === t ? 'selected' : ''}>Temporada ${x.temporada}</option>`).join('')}</select>
+      <div class="eps-cabecalho"><h3>Episódios</h3><select id="selTemp" aria-label="Temporada">${temps.map((x, n) => `<option value="${n}" ${n === t ? 'selected' : ''}>Temporada ${x.temporada}</option>`).join('')}</select></div>
       ${ultimo ? '' : '<button class="btn btn-sec" id="proxEp" type="button">Próximo episódio ▶</button>'}
-      <div class="eps-lista">${temps[t].episodios.map((x, n) => `<button class="ep ${n === e ? 'on' : ''}" data-ep="${n}" title="${esc(x.titulo || '')}">${n + 1}</button>`).join('')}</div>
+      <div class="eps-lista">${temps[t].episodios.map((x, n) => `<button class="ep ${n === e ? 'on' : ''}" data-ep="${n}" title="${esc(x.titulo || '')}"><span>${String(n + 1).padStart(2, '0')}</span><small>${esc(x.titulo || `Episódio ${n + 1}`)}</small></button>`).join('')}</div>
     </div>`;
   }
+  const sugestoes = sugestoesPara(i);
+  html += `<section class="player-sugestoes"><div class="sugestoes-titulo"><h3>Você também pode gostar</h3><span>Mais títulos para assistir</span></div><div class="trilho sugestoes-trilho">${sugestoes.map(card).join('')}</div></section>`;
   $('#playerInfo').innerHTML = html;
   $('#player').hidden = false; $('#player').scrollTo(0, 0); document.body.classList.add('travado');
 }
