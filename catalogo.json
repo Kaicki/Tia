@@ -1,5 +1,19 @@
 [
   {
+    "id": 142,
+    "titulo": "diabo veste prada 2",
+    "ano": 2026,
+    "genero": ["Comédia"],
+    "duracao": "1h 59m",
+    "descricao": "Miranda Priestly luta contra Emily Charlton, sua ex-assistente que se tornou uma executiva. Miranda se aproxima da aposentadoria enquanto compete pela publicidade em meio ao declínio da mídia impressa.",
+    "capa": "https://image.tmdb.org/t/p/original/50yWyY981TyUHhoxxSEKwO70FmQ.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/2cr7imTLVSSrzgL3bFKAMCMdgKw.jpg",
+    "link": "https://drive.google.com/file/d/1E4ysZRUSIhfJK0gVebBOmthGnS5TpISx/view?usp=drivesdk",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-11-05"
+  },
+  {
     "id": 133,
     "titulo": "Truque de Mestre",
     "ano": 2013,
