@@ -1,5 +1,19 @@
 [
   {
+    "id": 161,
+    "titulo": "Pânico 7",
+    "ano": 2026,
+    "genero": ["Terror"],
+    "duracao": "1h 54m",
+    "descricao": "Uma nova história da franquia Pânico.",
+    "capa": "https://image.tmdb.org/t/p/original/rEevavl5vebCVEd5imx7D1k8nmV.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/dewMkmgvw3EIndua2PsXkiLAxNz.jpg",
+    "link": "https://drive.google.com/file/d/1cJGv_hGCz9_Qc5b2q6UxAJP3S1U7k1VH/view?usp=drivesdk",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-11-08"
+  },
+  {
     "id": 157,
     "titulo": "Invocação do Mal 4: O Último Ritual",
     "ano": 2025,
