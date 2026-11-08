@@ -455,5 +455,58 @@
         ]
       } 
     ]
+  },
+  
+  {
+    "id": 1,
+    "titulo": "VisionQuest",
+    "ano": 2026,
+    "genero": [
+      "Ficçãocientífica",
+      "Ação",
+      "Suspense"
+    ],
+    "duracao": "1 Temporada",
+    "descricao": "Reiniciado e escondido daqueles que desejam transformá-lo em uma arma, Vision consulta inteligências artificiais para encontrar seu propósito. Essa vida tranquila acaba após uma recompensa por sua cabeça colocá-lo em fuga.",
+    "capa": "https://www.imdb.com/pt/title/tt23112594/mediaviewer/rm1247738626/?ref_=tt_ov_i",
+    "banner": "https://image.tmdb.org/t/p/original/9Icyh6iwzlXrnhuun4GSVpvmkiz.jpg",
+    "destaque": true,
+    "popular": true,
+    "adicionado": "2026-11-8",
+    "temporadas": [
+      {
+        "temporada": 1,
+        "episodios": [
+          {
+            "titulo": "Episódio 1",
+            "link": "https://drive.google.com/file/d/1eX3-FV8lE7P_9zMyX0-kZ32OiG5Y2WPV/view?usp=drivesdk"
+          },
+          {
+            "titulo": "Episódio 2",
+            "link": "https://drive.google.com/file/d/13PreFchwyOTNeFoasW4pejPfobUeqJsF/view?usp=drivesdk"
+          },
+          {
+            "titulo": "Episódio 3",
+            "link": "https://drive.google.com/file/d/1JkuBJnExs2pKh9INB_OrIu_OfmyV-PMd/view?usp=drivesdk"
+          },
+          {
+            "titulo": "Episódio 4",
+            "link": "https://drive.google.com/file/d/1QpFYYVC9j_27MVYuXJtAtAjrMpKDBGjR/view?usp=drivesdk"
+          },
+          {
+            "titulo": "Episódio 5",
+            "link": "https://drive.google.com/file/d/1zoiaE-uktrF8p3C1UcLu0tf4KcuxU36M/view?usp=drivesdk"
+          },
+          {
+            "titulo": "Episódio 6",
+            "link": "https://drive.google.com/file/d/16x4s7Phqq2fQ5NCil6QRosoyRQY6nskD/view?usp=drivesdk"
+          },
+          {
+           "titulo": "Episódio 7",
+           "link": "https://drive.google.com/file/d/1J1Nm5bB777Wf4TFEVA0VxJc5DXcEGSSk/view?usp=drivesdk"
+          }
+         ]
+      }
+    ]
   }
 ]
