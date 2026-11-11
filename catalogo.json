@@ -1,4 +1,21 @@
-[
+[{
+  "id": 172,
+  "titulo": "Escritores da Liberdade",
+  "ano": 2007,
+  "genero": [
+    "Drama",
+    "Biografia"
+  ],
+  "duracao": "2h 3min",
+  "descricao": "Baseado em uma história real, o filme acompanha uma professora que enfrenta desafios para ensinar uma turma de adolescentes de diferentes origens. Por meio da escrita e da leitura, ela incentiva seus alunos a compartilharem suas histórias e transformarem suas vidas.",
+  "capa": "https://image.tmdb.org/t/p/original/2hyEEPT57d0rkXYmCH7vm5rKhKH.jpg",
+  "banner": "https://image.tmdb.org/t/p/original/eO3buPuKWz9q0k0GKfvutBCK6Ul.jpg",
+  "link": "https://drive.google.com/file/d/1y27S668lNVeZroSArI77wiHVtCM_uJ2f/preview",
+  "destaque": false,
+  "popular": true,
+  "oculto": false,
+  "adicionado": "2026-11-11"
+},
   {
     "id": 171,
     "titulo": "Demon Slayer: Castelo Infinito",
