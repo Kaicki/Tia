@@ -1,5 +1,33 @@
 [
   {
+    "id": 171,
+    "titulo": "Demon Slayer: Castelo Infinito",
+    "ano": 2025,
+    "genero": "Animação, Ação, Fantasia",
+    "duracao": 155,
+    "descricao": "Tanjiro e os Hashira são transportados para o Castelo Infinito, onde enfrentam uma batalha decisiva contra os demônios.",
+    "capa": "https://image.tmdb.org/t/p/original/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/xGMzZomdE7dhULVuES7J8DaHUV5.jpg",
+    "link": "https://drive.google.com/file/d/1Nq2GoBBnHBZmbQ4UwqiaIpt3skPq-Gzc/preview",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-11-11"
+  },
+  {
+    "id": 172,
+    "titulo": "Moana (Live Action)",
+    "ano": 2026,
+    "genero": "Aventura, Família, Fantasia",
+    "duracao": 115,
+    "descricao": "Moana embarca em uma jornada pelo oceano ao lado do semideus Maui para restaurar a prosperidade de seu povo.",
+    "capa": "https://image.tmdb.org/t/p/original/iHpNZzSMLWPfnDqTVuMyRIhrdiW.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/ogv0eTxwCVcrfKYsl2GKH4hNHJL.jpg",
+    "link": "https://drive.google.com/file/d/1HzKBl1dgaOMHTIbSH4TU6t389XwEP2Zq/preview",
+    "destaque": false,
+    "popular": false,
+    "adicionado": "2026-11-11"
+  },
+  {
     "id": 163,
     "titulo": "Harry Potter e a Pedra Filosofal",
     "ano": 2001,
