@@ -1,4 +1,3 @@
-
 (function () {
   "use strict";
 
@@ -286,6 +285,11 @@
     var v = state.view;
     h.hidden = v !== "inicio";
 
+    // Para a troca automática do banner fora da tela inicial.
+    if (v !== "inicio") {
+      clearInterval(heroTimer);
+    }
+
     if (v === "inicio") {
       destaque();
 
@@ -363,20 +367,35 @@
     if (el) p.appendChild(el);
   }
 
-  function destaque() {
-    var h = $("hero");
+  /* ---------- BANNER ALEATÓRIO ---------- */
 
+  var heroTimer = null;
+  var heroAtual = null;
+
+  function sorteiaHero() {
     var pool = state.todos.filter(function (t) {
-      return t.backdrop;
+      return t.backdrop && t.id !== heroAtual;
     });
 
-    var t = pool[Math.floor(Math.random() * pool.length)];
+    if (!pool.length) {
+      pool = state.todos.filter(function (t) {
+        return t.backdrop;
+      });
+    }
+
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function pintaHero(t) {
+    var h = $("hero");
 
     if (!t) {
       h.innerHTML = "";
       h.style.backgroundImage = "";
       return;
     }
+
+    heroAtual = t.id;
 
     h.style.backgroundImage =
       "url('" + t.backdrop.replace(/'/g, "%27") + "')";
@@ -399,6 +418,30 @@
       fecharBusca();
       abrirDetalhe(t);
     };
+  }
+
+  function destaque() {
+    clearInterval(heroTimer);
+
+    pintaHero(sorteiaHero());
+
+    heroTimer = setInterval(function () {
+      var player = $("player");
+      var detalhe = $("detalhe");
+      var buscaEl = $("busca");
+
+      // Não troca enquanto o usuário assiste, vê detalhes ou busca.
+      if (
+        state.view !== "inicio" ||
+        (player && !player.hidden) ||
+        (detalhe && !detalhe.hidden) ||
+        (buscaEl && !buscaEl.hidden)
+      ) {
+        return;
+      }
+
+      pintaHero(sorteiaHero());
+    }, 8000);
   }
 
   /* ---------- CONTROLE DA BUSCA ---------- */
