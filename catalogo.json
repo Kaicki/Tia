@@ -1,11 +1,24 @@
-[{
+[
+{
+  "id": 173,
+  "titulo": "Super Mario Bros. - O Filme",
+  "ano": 2023,
+  "genero": ["Animação", "Aventura", "Comédia"],
+  "duracao": "1h 32min",
+  "descricao": "Mario e Luigi, dois irmãos encanadores do Brooklyn, acabam sendo transportados para um mundo mágico chamado Reino dos Cogumelos. Quando Luigi é capturado pelo poderoso Bowser, Mario embarca em uma aventura ao lado da Princesa Peach e seus amigos para salvar seu irmão e impedir os planos do vilão.",
+  "capa": "https://image.tmdb.org/t/p/original/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+  "banner": "https://image.tmdb.org/t/p/original/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+  "link": "https://drive.google.com/file/d/1AI41z_Lnt8zoop9Q54xbI1qClF8-yDpA/view?usp=drivesdk",
+  "destaque": false,
+  "popular": true,
+  "oculto": false,
+  "adicionado": "2026-11-20"
+},
+  {
   "id": 172,
   "titulo": "Escritores da Liberdade",
   "ano": 2007,
-  "genero": [
-    "Drama",
-    "Biografia"
-  ],
+  "genero": ["Drama", "Biografia" ],
   "duracao": "2h 3min",
   "descricao": "Baseado em uma história real, o filme acompanha uma professora que enfrenta desafios para ensinar uma turma de adolescentes de diferentes origens. Por meio da escrita e da leitura, ela incentiva seus alunos a compartilharem suas histórias e transformarem suas vidas.",
   "capa": "https://image.tmdb.org/t/p/original/2hyEEPT57d0rkXYmCH7vm5rKhKH.jpg",
