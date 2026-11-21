@@ -1,4 +1,3 @@
-
 (function () {
 "use strict";
 
@@ -261,11 +260,13 @@ function norm(o, tipo, i) {
           pick(s, [
             "nome",
             "titulo",
-            "name"
+            "name",
+            "temporada"
           ]) ||
           "Temporada " + (
             s.numero ||
             s.number ||
+            s.temporada ||
             n + 1
           ),
 
@@ -280,6 +281,30 @@ function norm(o, tipo, i) {
                 "nome"
               ]) ||
               "Episódio " + (j + 1),
+
+            descricao: pick(e, [
+              "descricao",
+              "descrição",
+              "sinopse",
+              "overview",
+              "resumo"
+            ]),
+
+            imagem: pick(e, [
+              "imagem",
+              "thumbnail",
+              "thumb",
+              "capa",
+              "poster",
+              "still"
+            ]),
+
+            duracao: pick(e, [
+              "duracao",
+              "duração",
+              "runtime",
+              "tempo"
+            ]),
 
             drive: driveId(
               pick(e, [
@@ -681,7 +706,6 @@ function pontuacaoSemelhanca(origem, candidato) {
 
   var pontos = emComum.length * 10;
 
-  // Pequena preferência pelo mesmo tipo de conteúdo.
   if (origem.tipo === candidato.tipo) {
     pontos += 2;
   }
@@ -711,7 +735,6 @@ function obterSemelhantes(origem) {
         return b.pontos - a.pontos;
       }
 
-      // Empates: ordem alfabética, não ordem de cadastro.
       return simples(a.titulo.titulo).localeCompare(
         simples(b.titulo.titulo)
       );
@@ -877,21 +900,34 @@ function abrirDetalhe(t) {
       return;
     }
 
-    var sel = document.createElement("select");
+    var topo = document.createElement("div");
+    topo.className = "episodios-topo";
 
+    var legenda = document.createElement("span");
+    legenda.className = "episodios-legenda";
+    legenda.textContent = "Temporadas e episódios";
+
+    var sel = document.createElement("select");
     sel.className = "temp";
+    sel.setAttribute("aria-label", "Selecionar temporada");
 
     temporadas.forEach(function (s, i) {
-      sel.innerHTML +=
-        '<option value="' + i + '">' +
-        esc(s.nome) +
-        "</option>";
+      var op = document.createElement("option");
+      op.value = String(i);
+      op.textContent = s.nome;
+      sel.appendChild(op);
     });
 
-    alvo.appendChild(sel);
+    topo.appendChild(legenda);
+    topo.appendChild(sel);
+    alvo.appendChild(topo);
+
+    var resumo = document.createElement("div");
+    resumo.className = "temporada-resumo";
+    alvo.appendChild(resumo);
 
     var box = document.createElement("div");
-
+    box.className = "episodios-lista";
     alvo.appendChild(box);
 
     function mostra() {
@@ -900,32 +936,85 @@ function abrirDetalhe(t) {
       var temporada = temporadas[Number(sel.value)];
 
       if (!temporada || !temporada.eps.length) {
+        resumo.textContent = "0 episódios";
         box.innerHTML =
           '<p class="vazio">Nenhum episódio nesta temporada.</p>';
-
         return;
       }
 
+      resumo.textContent =
+        temporada.eps.length +
+        (temporada.eps.length === 1 ? " episódio" : " episódios");
+
       temporada.eps.forEach(function (e, j) {
-        var r = document.createElement("div");
+        var card = document.createElement("button");
+        card.type = "button";
+        card.className = "ep-card";
+        card.setAttribute(
+          "aria-label",
+          "Assistir " + e.titulo + " de " + t.titulo
+        );
 
-        r.className = "ep";
+        var thumb = document.createElement("div");
+        thumb.className = "ep-thumb";
 
-        r.innerHTML =
-          '<span class="n">' + (j + 1) + "</span>" +
-          '<span class="t">' + esc(e.titulo) + "</span>" +
-          '<span class="p">' + PLAY + "</span>";
+        var img = document.createElement("img");
+        img.loading = "lazy";
+        img.alt = "";
+        img.src = e.imagem || t.poster || t.backdrop || "";
+        img.onerror = function () {
+          this.style.display = "none";
+          thumb.classList.add("sem-thumb");
+        };
+        thumb.appendChild(img);
 
-        r.onclick = function () {
+        var conteudo = document.createElement("div");
+        conteudo.className = "ep-conteudo";
+
+        var numero = document.createElement("span");
+        numero.className = "ep-numero";
+        numero.textContent =
+          "EPISÓDIO " + String(j + 1).padStart(2, "0");
+
+        var titulo = document.createElement("strong");
+        titulo.className = "ep-titulo";
+        titulo.textContent = e.titulo;
+
+        conteudo.appendChild(numero);
+        conteudo.appendChild(titulo);
+
+        if (e.descricao) {
+          var descricao = document.createElement("span");
+          descricao.className = "ep-descricao";
+          descricao.textContent = e.descricao;
+          conteudo.appendChild(descricao);
+        }
+
+        if (e.duracao) {
+          var duracao = document.createElement("span");
+          duracao.className = "ep-duracao";
+          duracao.textContent = e.duracao;
+          conteudo.appendChild(duracao);
+        }
+
+        var play = document.createElement("span");
+        play.className = "ep-play";
+        play.innerHTML = PLAY;
+        play.setAttribute("aria-hidden", "true");
+
+        card.appendChild(thumb);
+        card.appendChild(conteudo);
+        card.appendChild(play);
+
+        card.onclick = function () {
           tocar(t, e);
         };
 
-        box.appendChild(r);
+        box.appendChild(card);
       });
     }
 
     sel.onchange = mostra;
-
     mostra();
   }
 
